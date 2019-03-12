@@ -17,7 +17,7 @@ public class Usuario implements Serializable {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int idUsuario;
 
-	private byte reserva;
+	private boolean reserva;
 
 	private String tiempoAviso;
 
@@ -33,7 +33,7 @@ public class Usuario implements Serializable {
 
 	//uni-directional many-to-one association to Parada
 	@ManyToOne
-	@JoinColumn(name="Parada_idParada")
+	@JoinColumn(name="Parada_idParadas")
 	private Parada parada;
 
 	public Usuario() {
@@ -47,11 +47,11 @@ public class Usuario implements Serializable {
 		this.idUsuario = idUsuario;
 	}
 
-	public byte getReserva() {
+	public boolean getReserva() {
 		return this.reserva;
 	}
 
-	public void setReserva(byte reserva) {
+	public void setReserva(boolean reserva) {
 		this.reserva = reserva;
 	}
 

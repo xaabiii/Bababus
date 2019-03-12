@@ -28,7 +28,7 @@ public class Linea implements Serializable {
 	//uni-directional many-to-many association to Horario
 	@ManyToMany
 	@JoinTable(
-		name="LineaHorario"
+		name="LineaHorarios"
 		, joinColumns={
 			@JoinColumn(name="Linea_idLinea")
 			}

@@ -5,10 +5,11 @@ import javax.persistence.*;
 
 
 /**
- * The persistent class for the LineaParada database table.
+ * The persistent class for the LineaParadas database table.
  * 
  */
 @Entity
+@Table(name="LineaParadas")
 @NamedQuery(name="LineaParada.findAll", query="SELECT l FROM LineaParada l")
 public class LineaParada implements Serializable {
 	private static final long serialVersionUID = 1L;
