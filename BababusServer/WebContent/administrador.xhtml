@@ -4,12 +4,14 @@
       xmlns:f="http://java.sun.com/jsf/core"
       xmlns:h="http://java.sun.com/jsf/html"> 
 	<ui:composition template="/WEB-INF/templates/layout.xhtml">
-	<ui:define name="pageTitle">AMINISTRADOR</ui:define>
+	<ui:define name="pageTitle">HOLA BABALIER</ui:define>
 	<ui:define name="pageHeader">Bienvenido a Bababús</ui:define>
 	<ui:define name="body">
 	<h:form>
-		<h3>Listado de líneas</h3>
-	
+		<h3>Seleccione la línea</h3>
+		<h:selectOneMenu value="#{lineaMB.i}">
+			<f:selectItems value="#{lineaMB.items}"></f:selectItems>
+		</h:selectOneMenu>
 	</h:form>
 	
 	
