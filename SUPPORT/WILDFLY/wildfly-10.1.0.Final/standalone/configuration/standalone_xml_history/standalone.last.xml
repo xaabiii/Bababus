@@ -152,8 +152,8 @@
                     <connection-url>jdbc:mysql://localhost:3306/ExamenSta?useSSL=false</connection-url>
                     <driver>com.mysql</driver>
                     <security>
-                        <user-name>root</user-name>
-                        <password>1</password>
+                        <user-name>alumno</user-name>
+                        <password>sql</password>
                     </security>
                 </datasource>
                 <datasource jndi-name="java:jboss/datasources/ZtaAzterketa" pool-name="ZtaAzterketa" enabled="true">
