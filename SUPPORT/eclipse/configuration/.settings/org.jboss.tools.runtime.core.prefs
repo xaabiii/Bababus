@@ -1,0 +1,3 @@
+disabledDetectors=
+eclipse.preferences.version=1
+enabledDetectors=org.jboss.tools.runtime.handlers.JBossASHandler,org.jboss.tools.runtime.handlers.SeamHandler,org.jboss.tools.wtp.runtimes.tomcat.TomcatRuntimeDetector,org.jboss.tools.openshift.cdk.server.core.internal.detection.CDK3RuntimeDetector,org.jboss.tools.openshift.cdk.server.core.internal.detection.CDKRuntimeDetector

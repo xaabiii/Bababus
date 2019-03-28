@@ -1,0 +1,40 @@
+Manifest-Version: 1.0
+Bundle-SymbolicName: org.jboss.ide.eclipse.as.classpath.core;singleton
+ :=true
+Archiver-Version: Plexus Archiver
+Built-By: hudson
+Require-Bundle: org.eclipse.core.runtime;bundle-version="3.7.0",org.ec
+ lipse.jdt.core;bundle-version="3.7.0",org.eclipse.wst.server.core;bun
+ dle-version="1.1.302",org.eclipse.core.resources;bundle-version="3.7.
+ 100",org.eclipse.jdt.launching;bundle-version="3.6.0",org.eclipse.jst
+ .server.core;bundle-version="1.2.101",org.eclipse.wst.common.project.
+ facet.core;bundle-version="1.4.200",org.eclipse.jst.common.project.fa
+ cet.core;bundle-version="1.4.200",org.jboss.ide.eclipse.as.core;bundl
+ e-version="[3.0.0,4.0.0)",org.jboss.tools.foundation.core;bundle-vers
+ ion="1.1.0",org.eclipse.core.variables;bundle-version="3.3.0",org.jbo
+ ss.ide.eclipse.archives.core;bundle-version="3.6.102"
+Bundle-ManifestVersion: 2
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Eclipse-SourceReferences: scm:git:https://github.com/jbosstools/jbosst
+ ools-server.git;path="as/plugins/org.jboss.ide.eclipse.as.classpath.c
+ ore";commitId=f2ad985b5bf3989f2bc31d3bb1b75b9e8727cda0
+Bundle-Vendor: %Bundle-Vendor.0
+Export-Package: org.jboss.ide.eclipse.as.classpath.core,org.jboss.ide.
+ eclipse.as.classpath.core.ejb3,org.jboss.ide.eclipse.as.classpath.cor
+ e.jee,org.jboss.ide.eclipse.as.classpath.core.runtime,org.jboss.ide.e
+ clipse.as.classpath.core.runtime.cache.internal;x-friends:="org.jboss
+ .ide.eclipse.as.classpath.ui",org.jboss.ide.eclipse.as.classpath.core
+ .runtime.internal;x-friends:="org.jboss.ide.eclipse.as.classpath.ui",
+ org.jboss.ide.eclipse.as.classpath.core.runtime.jbossmodules.internal
+ ;x-friends:="org.jboss.tools.as.test.core",org.jboss.ide.eclipse.as.c
+ lasspath.core.runtime.path.internal;x-friends:="org.jboss.ide.eclipse
+ .as.classpath.ui",org.jboss.ide.eclipse.as.classpath.core.xpl
+Bundle-Name: %Bundle-Name.0
+Bundle-Version: 3.2.4.v20170329-2126
+Bundle-Localization: plugin
+Bundle-Activator: org.jboss.ide.eclipse.as.classpath.core.ClasspathCor
+ ePlugin
+Created-By: Apache Maven 3.3.9
+Build-Jdk: 1.8.0_111
+

@@ -1,0 +1,143 @@
+2019-03-23 18:04:17,286 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 38) WFLYCLINF0001: Activating Infinispan subsystem.
+2019-03-23 18:04:17,292 INFO  [org.wildfly.extension.io] (ServerService Thread Pool -- 37) WFLYIO001: Worker 'default' has auto-configured to 12 core threads with 96 task threads based on your 6 available processors
+2019-03-23 18:04:17,354 WARN  [org.jboss.as.txn] (ServerService Thread Pool -- 54) WFLYTX0013: Node identifier property is set to the default value. Please make sure it is unique.
+2019-03-23 18:04:17,359 INFO  [org.jboss.as.naming] (ServerService Thread Pool -- 46) WFLYNAM0001: Activating Naming Subsystem
+2019-03-23 18:04:17,361 INFO  [org.jboss.as.jsf] (ServerService Thread Pool -- 44) WFLYJSF0007: Activated the following JSF Implementations: [main]
+2019-03-23 18:04:17,380 INFO  [org.jboss.remoting] (MSC service thread 1-6) JBoss Remoting version 4.0.21.Final
+2019-03-23 18:04:17,382 INFO  [org.jboss.as.security] (ServerService Thread Pool -- 53) WFLYSEC0002: Activating Security Subsystem
+2019-03-23 18:04:17,386 INFO  [org.jboss.as.security] (MSC service thread 1-8) WFLYSEC0001: Current PicketBox version=4.9.6.Final
+2019-03-23 18:04:17,389 INFO  [org.jboss.as.connector] (MSC service thread 1-7) WFLYJCA0009: Starting JCA Subsystem (WildFly/IronJacamar 1.3.4.Final)
+2019-03-23 18:04:17,423 INFO  [org.jboss.as.webservices] (ServerService Thread Pool -- 56) WFLYWS0002: Activating WebServices Extension
+2019-03-23 18:04:17,587 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-1) WFLYUT0003: Undertow 1.4.0.Final starting
+2019-03-23 18:04:17,595 INFO  [org.jboss.as.connector.subsystems.datasources] (ServerService Thread Pool -- 33) WFLYJCA0004: Deploying JDBC-compliant driver class org.h2.Driver (version 1.3)
+2019-03-23 18:04:17,599 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-3) WFLYJCA0018: Started Driver service with driver-name = h2
+2019-03-23 18:04:17,642 INFO  [org.jboss.as.mail.extension] (MSC service thread 1-8) WFLYMAIL0001: Bound mail session [java:jboss/mail/Default]
+2019-03-23 18:04:17,643 INFO  [org.jboss.as.naming] (MSC service thread 1-4) WFLYNAM0003: Starting Naming Service
+2019-03-23 18:04:17,805 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 55) WFLYUT0014: Creating file handler for path '/home/danel/Escritorio/STA/WILDFLY/wildfly-10.1.0.Final/welcome-content' with options [directory-listing: 'false', follow-symlink: 'false', case-sensitive: 'true', safe-symlink-paths: '[]']
+2019-03-23 18:04:17,844 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-7) WFLYUT0012: Started server default-server.
+2019-03-23 18:04:17,845 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-7) WFLYUT0018: Host default-host starting
+2019-03-23 18:04:17,922 INFO  [org.jboss.as.ejb3] (MSC service thread 1-6) WFLYEJB0481: Strict pool slsb-strict-max-pool is using a max instance size of 96 (per class), which is derived from thread worker pool sizing.
+2019-03-23 18:04:17,924 INFO  [org.jboss.as.ejb3] (MSC service thread 1-8) WFLYEJB0482: Strict pool mdb-strict-max-pool is using a max instance size of 24 (per class), which is derived from the number of CPUs on this host.
+2019-03-23 18:04:18,020 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-7) WFLYUT0006: Undertow HTTP listener default listening on 127.0.0.1:8080
+2019-03-23 18:04:18,212 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-2) WFLYJCA0001: Bound data source [java:jboss/datasources/ExampleDS]
+2019-03-23 18:04:18,382 WARN  [org.jboss.as.domain.management.security] (MSC service thread 1-1) WFLYDM0111: Keystore /home/danel/Escritorio/STA/WILDFLY/wildfly-10.1.0.Final/standalone/configuration/application.keystore not found, it will be auto generated on first use with a self signed certificate for host localhost
+2019-03-23 18:04:18,390 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-5) WFLYSRV0027: Starting deployment of "Bababus.war" (runtime-name: "Bababus.war")
+2019-03-23 18:04:18,404 INFO  [org.jboss.as.server.deployment.scanner] (MSC service thread 1-8) WFLYDS0013: Started FileSystemDeploymentService for directory /home/danel/Escritorio/STA/WILDFLY/wildfly-10.1.0.Final/standalone/deployments
+2019-03-23 18:04:18,640 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-4) WFLYUT0006: Undertow HTTPS listener https listening on 127.0.0.1:8443
+2019-03-23 18:04:18,651 INFO  [org.infinispan.factories.GlobalComponentRegistry] (MSC service thread 1-6) ISPN000128: Infinispan version: Infinispan 'Chakra' 8.2.4.Final
+2019-03-23 18:04:18,718 INFO  [org.infinispan.configuration.cache.EvictionConfigurationBuilder] (ServerService Thread Pool -- 60) ISPN000152: Passivation configured without an eviction policy being selected. Only manually evicted entities will be passivated.
+2019-03-23 18:04:18,729 INFO  [org.infinispan.configuration.cache.EvictionConfigurationBuilder] (ServerService Thread Pool -- 60) ISPN000152: Passivation configured without an eviction policy being selected. Only manually evicted entities will be passivated.
+2019-03-23 18:04:18,744 INFO  [org.infinispan.configuration.cache.EvictionConfigurationBuilder] (ServerService Thread Pool -- 59) ISPN000152: Passivation configured without an eviction policy being selected. Only manually evicted entities will be passivated.
+2019-03-23 18:04:18,753 INFO  [org.infinispan.configuration.cache.EvictionConfigurationBuilder] (ServerService Thread Pool -- 59) ISPN000152: Passivation configured without an eviction policy being selected. Only manually evicted entities will be passivated.
+2019-03-23 18:04:18,756 INFO  [org.infinispan.configuration.cache.EvictionConfigurationBuilder] (ServerService Thread Pool -- 62) ISPN000152: Passivation configured without an eviction policy being selected. Only manually evicted entities will be passivated.
+2019-03-23 18:04:18,757 INFO  [org.infinispan.configuration.cache.EvictionConfigurationBuilder] (ServerService Thread Pool -- 62) ISPN000152: Passivation configured without an eviction policy being selected. Only manually evicted entities will be passivated.
+2019-03-23 18:04:18,832 INFO  [org.jboss.ws.common.management] (MSC service thread 1-4) JBWS022052: Starting JBossWS 5.1.5.Final (Apache CXF 3.1.6) 
+2019-03-23 18:04:18,972 INFO  [org.jboss.as.jpa] (MSC service thread 1-4) WFLYJPA0002: Read persistence.xml for Bababus
+2019-03-23 18:04:19,206 INFO  [org.jboss.weld.deployer] (MSC service thread 1-7) WFLYWELD0003: Processing weld deployment Bababus.war
+2019-03-23 18:04:19,338 INFO  [org.hibernate.validator.internal.util.Version] (MSC service thread 1-7) HV000001: Hibernate Validator 5.2.4.Final
+2019-03-23 18:04:19,781 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-7) WFLYEJB0473: JNDI bindings for session bean named 'Servicios' in deployment unit 'deployment "Bababus.war"' are as follows:
+
+	java:global/Bababus/Servicios!negocio.Servicios
+	java:app/Bababus/Servicios!negocio.Servicios
+	java:module/Servicios!negocio.Servicios
+	java:global/Bababus/Servicios
+	java:app/Bababus/Servicios
+	java:module/Servicios
+
+2019-03-23 18:04:20,030 INFO  [org.infinispan.configuration.cache.EvictionConfigurationBuilder] (ServerService Thread Pool -- 61) ISPN000152: Passivation configured without an eviction policy being selected. Only manually evicted entities will be passivated.
+2019-03-23 18:04:20,031 INFO  [org.infinispan.configuration.cache.EvictionConfigurationBuilder] (ServerService Thread Pool -- 61) ISPN000152: Passivation configured without an eviction policy being selected. Only manually evicted entities will be passivated.
+2019-03-23 18:04:20,086 INFO  [org.jboss.weld.Version] (MSC service thread 1-7) WELD-000900: 2.3.5 (Final)
+2019-03-23 18:04:20,446 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 61) WFLYCLINF0002: Started client-mappings cache from ejb container
+2019-03-23 18:04:20,514 ERROR [org.jboss.as.controller.management-operation] (Controller Boot Thread) WFLYCTL0013: Operation ("deploy") failed - address: ([("deployment" => "Bababus.war")]) - failure description: {
+    "WFLYCTL0412: Required services that are not installed:" => ["jboss.naming.context.java.jboss.datasources.ExamenSta"],
+    "WFLYCTL0180: Services with missing/unavailable dependencies" => [
+        "jboss.persistenceunit.\"Bababus.war#Bababus\" is missing [jboss.naming.context.java.jboss.datasources.ExamenSta]",
+        "jboss.persistenceunit.\"Bababus.war#Bababus\".__FIRST_PHASE__ is missing [jboss.naming.context.java.jboss.datasources.ExamenSta]"
+    ]
+}
+2019-03-23 18:04:20,561 INFO  [org.jboss.as.server] (ServerService Thread Pool -- 34) WFLYSRV0010: Deployed "Bababus.war" (runtime-name : "Bababus.war")
+2019-03-23 18:04:20,563 INFO  [org.jboss.as.controller] (Controller Boot Thread) WFLYCTL0183: Service status report
+WFLYCTL0184:    New missing/unsatisfied dependencies:
+      service jboss.naming.context.java.jboss.datasources.ExamenSta (missing) dependents: [service jboss.persistenceunit."Bababus.war#Bababus", service jboss.persistenceunit."Bababus.war#Bababus".__FIRST_PHASE__] 
+
+2019-03-23 18:04:20,716 INFO  [org.jboss.as] (Controller Boot Thread) WFLYSRV0060: Http management interface listening on http://127.0.0.1:9990/management
+2019-03-23 18:04:20,717 INFO  [org.jboss.as] (Controller Boot Thread) WFLYSRV0051: Admin console listening on http://127.0.0.1:9990
+2019-03-23 18:04:20,717 ERROR [org.jboss.as] (Controller Boot Thread) WFLYSRV0026: WildFly Full 10.1.0.Final (WildFly Core 2.2.0.Final) started (with errors) in 5898ms - Started 435 of 699 services (27 services failed or missing dependencies, 404 services are lazy, passive or on-demand)
+2019-03-23 18:04:20,810 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-5) WFLYSRV0028: Stopped deployment Bababus.war (runtime-name: Bababus.war) in 49ms
+2019-03-23 18:04:20,812 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 61) WFLYCLINF0003: Stopped client-mappings cache from ejb container
+2019-03-23 18:04:20,865 WARN  [org.jboss.as.controller] (DeploymentScanner-threads - 2) WFLYCTL0357: Notification of type deployment-undeployed is not described for the resource at the address []
+2019-03-23 18:04:20,866 INFO  [org.jboss.as.server] (DeploymentScanner-threads - 2) WFLYSRV0009: Undeployed "Bababus.war" (runtime-name: "Bababus.war")
+2019-03-23 18:04:20,869 INFO  [org.jboss.as.controller] (DeploymentScanner-threads - 2) WFLYCTL0183: Service status report
+WFLYCTL0184:    New missing/unsatisfied dependencies:
+      service jboss.deployment.unit."Bababus.war".WeldBootstrapService (missing) dependents: [service jboss.deployment.unit."Bababus.war".component."javax.faces.webapp.FacetTag".WeldInstantiator, service jboss.deployment.unit."Bababus.war".component."org.jboss.weld.servlet.WeldInitialListener".WeldInstantiator, service jboss.deployment.unit."Bababus.war".CdiValidatorFactoryService, service jboss.deployment.unit."Bababus.war".component."javax.servlet.jsp.jstl.tlv.PermittedTaglibsTLV".WeldInstantiator, WFLYCTL0208: ... and 8 more ] 
+      service jboss.deployment.unit."Bababus.war".WeldStartService (missing) dependents: [service jboss.deployment.unit."Bababus.war".component."javax.faces.webapp.FacetTag".WeldInstantiator, service jboss.deployment.unit."Bababus.war".component."org.jboss.weld.servlet.WeldInitialListener".WeldInstantiator, service jboss.deployment.unit."Bababus.war".CdiValidatorFactoryService, service jboss.deployment.unit."Bababus.war".component."javax.servlet.jsp.jstl.tlv.PermittedTaglibsTLV".WeldInstantiator, WFLYCTL0208: ... and 9 more ] 
+      service jboss.deployment.unit."Bababus.war".beanmanager (missing) dependents: [service jboss.persistenceunit."Bababus.war#Bababus"] 
+      service jboss.deployment.unit."Bababus.war".component.Servicios.CREATE (missing) dependents: [service jboss.deployment.unit."Bababus.war".component.Servicios.START] 
+      service jboss.deployment.unit."Bababus.war".component.Servicios.JndiBindingsService (missing) dependents: [service jboss.deployment.unit."Bababus.war".jndiDependencyService] 
+      service jboss.deployment.unit."Bababus.war".component.Servicios.START (missing) dependents: [service jboss.deployment.unit."Bababus.war".moduleDeploymentRuntimeInformationStart, service jboss.undertow.deployment.default-server.default-host./Bababus, service jboss.undertow.deployment.default-server.default-host./Bababus.UndertowDeploymentInfoService, service jboss.deployment.unit."Bababus.war".deploymentCompleteService] 
+      service jboss.deployment.unit."Bababus.war".component.Servicios.VIEW."negocio.Servicios".LOCAL (missing) dependents: [service jboss.deployment.unit."Bababus.war".component.Servicios.START] 
+      service jboss.deployment.unit."Bababus.war".component.Servicios.WeldInstantiator (missing) dependents: [service jboss.deployment.unit."Bababus.war".component.Servicios.START] 
+      service jboss.deployment.unit."Bababus.war".component.Servicios.WeldInterceptorBindingsService (missing) dependents: [service jboss.deployment.unit."Bababus.war".component.Servicios.WeldInstantiator] 
+      service jboss.deployment.unit."Bababus.war".component.Servicios.ejb.non-functional-timerservice (missing) dependents: [service jboss.deployment.unit."Bababus.war".component.Servicios.START] 
+      service jboss.deployment.unit."Bababus.war".component."com.sun.faces.config.ConfigureListener".CREATE (missing) dependents: [service jboss.deployment.unit."Bababus.war".component."com.sun.faces.config.ConfigureListener".START] 
+      service jboss.deployment.unit."Bababus.war".component."com.sun.faces.config.ConfigureListener".JndiBindingsService (missing) dependents: [service jboss.deployment.unit."Bababus.war".jndiDependencyService] 
+      service jboss.deployment.unit."Bababus.war".component."com.sun.faces.config.ConfigureListener".START (missing) dependents: [service jboss.undertow.deployment.default-server.default-host./Bababus, service jboss.undertow.deployment.default-server.default-host./Bababus.UndertowDeploymentInfoService, service jboss.deployment.unit."Bababus.war".deploymentCompleteService] 
+      service jboss.deployment.unit."Bababus.war".component."com.sun.faces.config.ConfigureListener".WeldInstantiator (missing) dependents: [service jboss.deployment.unit."Bababus.war".component."com.sun.faces.config.ConfigureListener".START] 
+      service jboss.deployment.unit."Bababus.war".component."javax.faces.webapp.FacesServlet".CREATE (missing) dependents: [service jboss.deployment.unit."Bababus.war".component."javax.faces.webapp.FacesServlet".START] 
+      service jboss.deployment.unit."Bababus.war".component."javax.faces.webapp.FacesServlet".JndiBindingsService (missing) dependents: [service jboss.deployment.unit."Bababus.war".jndiDependencyService] 
+      service jboss.deployment.unit."Bababus.war".component."javax.faces.webapp.FacesServlet".START (missing) dependents: [service jboss.undertow.deployment.default-server.default-host./Bababus, service jboss.undertow.deployment.default-server.default-host./Bababus.UndertowDeploymentInfoService, service jboss.deployment.unit."Bababus.war".deploymentCompleteService] 
+      service jboss.deployment.unit."Bababus.war".component."javax.faces.webapp.FacesServlet".WeldInstantiator (missing) dependents: [service jboss.deployment.unit."Bababus.war".component."javax.faces.webapp.FacesServlet".START] 
+      service jboss.deployment.unit."Bababus.war".component."javax.faces.webapp.FacetTag".CREATE (missing) dependents: [service jboss.deployment.unit."Bababus.war".component."javax.faces.webapp.FacetTag".START] 
+      service jboss.deployment.unit."Bababus.war".component."javax.faces.webapp.FacetTag".JndiBindingsService (missing) dependents: [service jboss.deployment.unit."Bababus.war".jndiDependencyService] 
+      service jboss.deployment.unit."Bababus.war".component."javax.faces.webapp.FacetTag".START (missing) dependents: [service jboss.undertow.deployment.default-server.default-host./Bababus, service jboss.undertow.deployment.default-server.default-host./Bababus.UndertowDeploymentInfoService, service jboss.deployment.unit."Bababus.war".deploymentCompleteService] 
+      service jboss.deployment.unit."Bababus.war".component."javax.faces.webapp.FacetTag".WeldInstantiator (missing) dependents: [service jboss.deployment.unit."Bababus.war".component."javax.faces.webapp.FacetTag".START] 
+      service jboss.deployment.unit."Bababus.war".component."javax.servlet.jsp.jstl.tlv.PermittedTaglibsTLV".CREATE (missing) dependents: [service jboss.deployment.unit."Bababus.war".component."javax.servlet.jsp.jstl.tlv.PermittedTaglibsTLV".START] 
+      service jboss.deployment.unit."Bababus.war".component."javax.servlet.jsp.jstl.tlv.PermittedTaglibsTLV".JndiBindingsService (missing) dependents: [service jboss.deployment.unit."Bababus.war".jndiDependencyService] 
+      service jboss.deployment.unit."Bababus.war".component."javax.servlet.jsp.jstl.tlv.PermittedTaglibsTLV".START (missing) dependents: [service jboss.undertow.deployment.default-server.default-host./Bababus, service jboss.undertow.deployment.default-server.default-host./Bababus.UndertowDeploymentInfoService, service jboss.deployment.unit."Bababus.war".deploymentCompleteService] 
+      service jboss.deployment.unit."Bababus.war".component."javax.servlet.jsp.jstl.tlv.PermittedTaglibsTLV".WeldInstantiator (missing) dependents: [service jboss.deployment.unit."Bababus.war".component."javax.servlet.jsp.jstl.tlv.PermittedTaglibsTLV".START] 
+      service jboss.deployment.unit."Bababus.war".component."javax.servlet.jsp.jstl.tlv.ScriptFreeTLV".CREATE (missing) dependents: [service jboss.deployment.unit."Bababus.war".component."javax.servlet.jsp.jstl.tlv.ScriptFreeTLV".START] 
+      service jboss.deployment.unit."Bababus.war".component."javax.servlet.jsp.jstl.tlv.ScriptFreeTLV".JndiBindingsService (missing) dependents: [service jboss.deployment.unit."Bababus.war".jndiDependencyService] 
+      service jboss.deployment.unit."Bababus.war".component."javax.servlet.jsp.jstl.tlv.ScriptFreeTLV".START (missing) dependents: [service jboss.undertow.deployment.default-server.default-host./Bababus, service jboss.undertow.deployment.default-server.default-host./Bababus.UndertowDeploymentInfoService, service jboss.deployment.unit."Bababus.war".deploymentCompleteService] 
+      service jboss.deployment.unit."Bababus.war".component."javax.servlet.jsp.jstl.tlv.ScriptFreeTLV".WeldInstantiator (missing) dependents: [service jboss.deployment.unit."Bababus.war".component."javax.servlet.jsp.jstl.tlv.ScriptFreeTLV".START] 
+      service jboss.deployment.unit."Bababus.war".component."org.jboss.weld.servlet.WeldInitialListener".CREATE (missing) dependents: [service jboss.deployment.unit."Bababus.war".component."org.jboss.weld.servlet.WeldInitialListener".START] 
+      service jboss.deployment.unit."Bababus.war".component."org.jboss.weld.servlet.WeldInitialListener".JndiBindingsService (missing) dependents: [service jboss.deployment.unit."Bababus.war".jndiDependencyService] 
+      service jboss.deployment.unit."Bababus.war".component."org.jboss.weld.servlet.WeldInitialListener".START (missing) dependents: [service jboss.undertow.deployment.default-server.default-host./Bababus, service jboss.undertow.deployment.default-server.default-host./Bababus.UndertowDeploymentInfoService, service jboss.deployment.unit."Bababus.war".deploymentCompleteService] 
+      service jboss.deployment.unit."Bababus.war".component."org.jboss.weld.servlet.WeldInitialListener".WeldInstantiator (missing) dependents: [service jboss.deployment.unit."Bababus.war".component."org.jboss.weld.servlet.WeldInitialListener".START] 
+      service jboss.deployment.unit."Bababus.war".component."org.jboss.weld.servlet.WeldTerminalListener".CREATE (missing) dependents: [service jboss.deployment.unit."Bababus.war".component."org.jboss.weld.servlet.WeldTerminalListener".START] 
+      service jboss.deployment.unit."Bababus.war".component."org.jboss.weld.servlet.WeldTerminalListener".JndiBindingsService (missing) dependents: [service jboss.deployment.unit."Bababus.war".jndiDependencyService] 
+      service jboss.deployment.unit."Bababus.war".component."org.jboss.weld.servlet.WeldTerminalListener".START (missing) dependents: [service jboss.undertow.deployment.default-server.default-host./Bababus, service jboss.undertow.deployment.default-server.default-host./Bababus.UndertowDeploymentInfoService, service jboss.deployment.unit."Bababus.war".deploymentCompleteService] 
+      service jboss.deployment.unit."Bababus.war".component."org.jboss.weld.servlet.WeldTerminalListener".WeldInstantiator (missing) dependents: [service jboss.deployment.unit."Bababus.war".component."org.jboss.weld.servlet.WeldTerminalListener".START] 
+      service jboss.deployment.unit."Bababus.war".ee.ComponentRegistry (missing) dependents: [service jboss.undertow.deployment.default-server.default-host./Bababus.UndertowDeploymentInfoService] 
+      service jboss.deployment.unit."Bababus.war".jndiDependencyService (missing) dependents: [service jboss.deployment.unit."Bababus.war".component."javax.faces.webapp.FacetTag".START, service jboss.deployment.unit."Bababus.war".component."javax.servlet.jsp.jstl.tlv.ScriptFreeTLV".START, service jboss.deployment.unit."Bababus.war".component."javax.servlet.jsp.jstl.tlv.PermittedTaglibsTLV".START, service jboss.deployment.unit."Bababus.war".component.Servicios.START, WFLYCTL0208: ... and 6 more ] 
+      service jboss.deployment.unit."Bababus.war".moduleDeploymentRuntimeInformation (missing) dependents: [service jboss.deployment.unit."Bababus.war".moduleDeploymentRuntimeInformationStart, service jboss.deployment.unit."Bababus.war".component.Servicios.START] 
+      service jboss.naming.context.java.app.Bababus.env (missing) dependents: [service jboss.deployment.unit."Bababus.war".jndiDependencyService] 
+      service jboss.naming.context.java.module.Bababus.Bababus.BeanManager (missing) dependents: [service jboss.deployment.unit."Bababus.war".jndiDependencyService] 
+      service jboss.naming.context.java.module.Bababus.Bababus.DefaultContextService (missing) dependents: [service jboss.deployment.unit."Bababus.war".jndiDependencyService] 
+      service jboss.naming.context.java.module.Bababus.Bababus.DefaultDataSource (missing) dependents: [service jboss.deployment.unit."Bababus.war".jndiDependencyService] 
+      service jboss.naming.context.java.module.Bababus.Bababus.DefaultManagedExecutorService (missing) dependents: [service jboss.deployment.unit."Bababus.war".jndiDependencyService] 
+      service jboss.naming.context.java.module.Bababus.Bababus.DefaultManagedScheduledExecutorService (missing) dependents: [service jboss.deployment.unit."Bababus.war".jndiDependencyService] 
+      service jboss.naming.context.java.module.Bababus.Bababus.DefaultManagedThreadFactory (missing) dependents: [service jboss.deployment.unit."Bababus.war".jndiDependencyService] 
+      service jboss.naming.context.java.module.Bababus.Bababus.EJBContext (missing) dependents: [service jboss.deployment.unit."Bababus.war".jndiDependencyService] 
+      service jboss.naming.context.java.module.Bababus.Bababus.TimerService (missing) dependents: [service jboss.deployment.unit."Bababus.war".jndiDependencyService] 
+      service jboss.naming.context.java.module.Bababus.Bababus.TransactionSynchronizationRegistry (missing) dependents: [service jboss.deployment.unit."Bababus.war".jndiDependencyService] 
+      service jboss.naming.context.java.module.Bababus.Bababus.UserTransaction (missing) dependents: [service jboss.deployment.unit."Bababus.war".jndiDependencyService] 
+      service jboss.naming.context.java.module.Bababus.Bababus.env (missing) dependents: [service jboss.deployment.unit."Bababus.war".jndiDependencyService] 
+      service jboss.naming.context.java.module.Bababus.Bababus.env."negocio.Servicios".em (missing) dependents: [service jboss.deployment.unit."Bababus.war".jndiDependencyService, service jboss.deployment.unit."Bababus.war".component.Servicios.START] 
+      service jboss.persistenceunit."Bababus.war#Bababus" (missing) dependents: [service jboss.deployment.unit."Bababus.war".component."javax.faces.webapp.FacetTag".START, service jboss.undertow.deployment.default-server.default-host./Bababus, service jboss.undertow.deployment.default-server.default-host./Bababus.UndertowDeploymentInfoService, service jboss.deployment.unit."Bababus.war".component."javax.servlet.jsp.jstl.tlv.ScriptFreeTLV".START, WFLYCTL0208: ... and 8 more ] 
+      service jboss.undertow.deployment.default-server.default-host./Bababus (missing) dependents: [service jboss.deployment.unit."Bababus.war".deploymentCompleteService] 
+      service jboss.undertow.deployment.default-server.default-host./Bababus.UndertowDeploymentInfoService (missing) dependents: [service jboss.undertow.deployment.default-server.default-host./Bababus] 
+      service jboss.undertow.deployment.default-server.default-host./Bababus.codec (missing) dependents: [service jboss.undertow.deployment.default-server.default-host./Bababus.UndertowDeploymentInfoService] 
+      service jboss.undertow.deployment.default-server.default-host./Bababus.session (missing) dependents: [service jboss.undertow.deployment.default-server.default-host./Bababus.UndertowDeploymentInfoService] 
+      service org.wildfly.request-controller.control-point."Bababus.war".undertow (missing) dependents: [service jboss.undertow.deployment.default-server.default-host./Bababus.UndertowDeploymentInfoService] 
+
+2019-03-23 18:04:25,605 INFO  [org.jboss.as.server.deployment.scanner] (DeploymentScanner-threads - 2) WFLYDS0004: Found Bababus.war in deployment directory. To trigger deployment create a file called Bababus.war.dodeploy
+2019-03-23 18:20:01,178 INFO  [org.jboss.as.server] (Thread-2) WFLYSRV0220: Server shutdown has been requested via an OS signal
+2019-03-23 18:20:01,197 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-5) WFLYJCA0010: Unbound data source [java:jboss/datasources/ExampleDS]
+2019-03-23 18:20:01,198 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-5) WFLYUT0008: Undertow HTTPS listener https suspending
+2019-03-23 18:20:01,199 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-5) WFLYUT0007: Undertow HTTPS listener https stopped, was bound to 127.0.0.1:8443
+2019-03-23 18:20:01,207 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-3) WFLYUT0019: Host default-host stopping
+2019-03-23 18:20:01,218 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-2) WFLYJCA0019: Stopped Driver service with driver-name = h2
+2019-03-23 18:20:01,221 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-6) WFLYUT0008: Undertow HTTP listener default suspending
+2019-03-23 18:20:01,221 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-6) WFLYUT0007: Undertow HTTP listener default stopped, was bound to 127.0.0.1:8080
+2019-03-23 18:20:01,223 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-2) WFLYUT0004: Undertow 1.4.0.Final stopping
+2019-03-23 18:20:01,251 INFO  [org.jboss.as] (MSC service thread 1-2) WFLYSRV0050: WildFly Full 10.1.0.Final (WildFly Core 2.2.0.Final) stopped in 61ms
