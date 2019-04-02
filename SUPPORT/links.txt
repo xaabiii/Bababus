@@ -1,0 +1,8 @@
+http://www.dataprix.com/blog-it/tendencias-tecnologicas/software-libre/primeros-pasos-primefaces-eclipse-tomcat-paso-paso
+
+https://www.primefaces.org/showcase/getstarted.xhtml
+
+https://www.journaldev.com/4023/primefaces-responsive-layout-mobile#primefaces-mobile-setup
+
+https://developer.jboss.org/wiki/GetStartedWithTheMobileWeb
+
