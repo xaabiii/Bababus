@@ -1,6 +1,6 @@
 package presentacion;
 
-import java.io.Serializable;
+import java.io.Serializable; 
 import java.util.ArrayList;
 import java.util.List;
 

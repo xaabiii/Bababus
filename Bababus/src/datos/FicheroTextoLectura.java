@@ -5,7 +5,7 @@
  */
 package datos;
 
-import java.io.BufferedReader;
+import java.io.BufferedReader; 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
@@ -13,10 +13,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
-import javax.faces.event.ActionEvent;
-import javax.faces.event.ActionListener;
-import javax.swing.Timer;
 
 /**
  *
@@ -26,6 +22,7 @@ public class FicheroTextoLectura extends Fichero
 {
     private FileReader fr;
     private BufferedReader br;
+    private String nomFich = "/home/gloria/Bababus/Bababus/coordenadas.txt";
     
     public FicheroTextoLectura()
     {
@@ -77,15 +74,23 @@ public class FicheroTextoLectura extends Fichero
     }
     
 
-    public List<String> volcarFicheroArray()  //Leo el código ASCII caracter a caracter y lo transformoen byte
+    public List<String> volcarFicheroArray()  
     {
         List<String> lista = new ArrayList<>();
         String linea = leerLinea();
         while(linea != null)
         {
-            lista.add(linea);
+        	lista.add(linea);
             linea = leerLinea();
         }
         return lista;
     }
+
+	public String getNomFich() {
+		return nomFich;
+	}
+
+	public void setNomFich(String nomFich) {
+		this.nomFich = nomFich;
+	}
 }

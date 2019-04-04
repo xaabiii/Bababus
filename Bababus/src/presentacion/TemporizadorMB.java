@@ -1,31 +1,35 @@
 package presentacion;
 
-import java.awt.event.ActionEvent;
-
-import java.awt.event.ActionListener;
 import java.io.Serializable;
-import java.util.Date;
-import javax.swing.JOptionPane;
-import javax.swing.Timer;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Timer;
 
-import datos.Fichero;
+import javax.annotation.PostConstruct;
+import javax.ejb.EJB;
+import javax.enterprise.context.SessionScoped;
+import javax.inject.Named;
+
 import datos.FicheroTextoLectura;
+import datos.ScheduledTask;
+import negocio.Servicios;
 
+
+@Named
+@SessionScoped
 public class TemporizadorMB implements Serializable
 {
 	private static final long serialVersionUID = 1L;
-
-	private FicheroTextoLectura ftl = new FicheroTextoLectura("NOMBREDELFICHERO");
-		
-	Timer timer = new Timer(20000, new ActionListener()
+	
+	@PostConstruct
+	public void probandoFecha()
 	{
-	    public void actionPerformed(ActionEvent e)
-	    { 
-	    	List coordenadas = volcarFicheroArray();
-	    	
-	    }
-	    
-	});
+		Timer time = new Timer();
+		ScheduledTask st = new ScheduledTask();
+		time.schedule(st, 0, 5000);
+	}
 
-
+	
 }
+
+

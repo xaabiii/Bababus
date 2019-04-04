@@ -1,6 +1,7 @@
 package negocio;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.ejb.LocalBean;
@@ -8,6 +9,7 @@ import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
+import datos.FicheroTextoLectura;
 import datos.Linea;
 import datos.LineaHorario;
 import datos.LineaParada;
@@ -59,7 +61,5 @@ public class Servicios implements Serializable{
 		return LineaParadas;
 	}
 		
-		
-	
 
 }
