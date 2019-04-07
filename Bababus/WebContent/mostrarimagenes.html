@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+function rotar_imagen(){
+	var tiempo = 3000;//tiempo en milisegundos
+	var arrImagenes = ['http://3.bp.blogspot.com/_bVS2bdfO4As/RkvjtoibTxI/AAAAAAAAAso/c1Y93BkfBrs/s320/01_HomerSimpson.gif',
+	 'http://2.bp.blogspot.com/__UX7GOPM7wI/SeAOEWkWsWI/AAAAAAAAAWQ/0xaOwEIue_I/s200/Homer_Simpson.png',
+	'https://www.ehu.eus/documents/6908677/7015800/PLANO+DPTO/97c46b46-158e-449c-8749-5a3be887b626?t=1493904984000.png'];
+	_img = document.getElementById('rotativo');
+  
+	//cargar la 1er imagen
+	_img.src = arrImagenes[0];
+	var i=1;
+	setInterval(function(){
+	_img.src = arrImagenes[i];
+	i = (i == arrImagenes.length-1)? 0 : (i+1);
+	}, tiempo);
+}
+</script>
+</head>
+<body onload="rotar_imagen();">
+  <img id="rotativo"  />
+</body>
+</html>
