@@ -14,7 +14,7 @@ public class ScheduledTask extends TimerTask
 	{
 		Date now;
 		now = new Date();
-		FicheroTextoLectura ftl = new FicheroTextoLectura("coordenadas.txt");
+		FicheroTextoLectura ftl = new FicheroTextoLectura("/home/gloria/Bababus/Bababus/coordenadas.txt");
 		List<String> coordenadas = ftl.volcarFicheroArray();
 		ftl.cerrarFichero();
 		String c = coordenadas.get(i);
