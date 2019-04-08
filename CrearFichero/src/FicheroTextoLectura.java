@@ -2,6 +2,8 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class FicheroTextoLectura extends Fichero {
 
@@ -48,37 +50,35 @@ public class FicheroTextoLectura extends Fichero {
 			}
 		}
 	}
-	
-	public Array volcarFicheroArray(int tam)
+	public String leerLinea()
 	{
-		String linea = null;
-		Array a = new Array(tam);
-		ArrayString as = null;
-		int cont = 0;
+		String linea = "";
 		try {
 			linea = br.readLine();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		while(linea != null)
+		return linea;
+	}
+	
+	public List<String> volcarFicheroArray()
+	{
+		String linea;
+		List<String> lista = new ArrayList<>();
+		
+		while((linea = leerLinea()) != null)
 		{
-			as = new ArrayString(linea);
-			for(int i = 0; i < as.getNumE();i++)
+			String[] as = linea.split(" ");
+			for(int i = 0; i < as.length;i++)
 			{
-				a.setValor(cont,Float.parseFloat(as.getValor(i)));
-				cont++;
-				a.setNumE(cont);
+				lista.add(as[i]);
 			}
-			try {
-				linea = br.readLine();
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			
 		}
-		return a;
+		return lista;
+		
+		
+		
 	}
 	
 	

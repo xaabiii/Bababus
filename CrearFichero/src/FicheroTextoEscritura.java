@@ -1,5 +1,6 @@
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
+import java.util.List;
 
 public class FicheroTextoEscritura extends Fichero {
 
@@ -29,11 +30,11 @@ public class FicheroTextoEscritura extends Fichero {
 		}
 	}
 	
-	public void volvarArrayFichero(Array a)
+	public void volvarArrayFichero(List<String> lista)
 	{
-		for(int i = 0,j = 1; i < a.getNumE();i = i+2,j = j+2)
+		for(int i = 0,j = 1; i <lista.size() && j < lista.size();i = i+2,j = j+2)
 		{
-			pw.println(a.getValor(i)+" "+a.getValor(j));
+			pw.println(lista.get(i)+" "+lista.get(j));
 			
 		}
 	}
