@@ -9,9 +9,7 @@
 	<h:outputStylesheet name="css/stylePhone.css"  />
 </h:head> 
 <body> 
-	<h:form>
-		<h1>Bienvenido Babalier</h1>
-		
+	<h:form>		
 		<h:outputText value="Linea seleccionada:" />
 		<h:outputText value="#{lineaBean.entity.origenDestino}" />
 		<h:dataTable value="#{lineaBean.getListLineaHorario()}" var="hora" border="1">
