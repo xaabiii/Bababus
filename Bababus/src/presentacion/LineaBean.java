@@ -120,7 +120,7 @@ public class LineaBean implements Serializable{
 		//HttpSession sesion=(HttpSession) FacesContext.getCurrentInstance().getExternalContext().getSession(false);//para que deaparezca el texto que hemos
 		//sesion.invalidate();
 		
-		return "pagina1.xhtml";
+		return "home.xhtml";
 	}
 	
 	public String cambiarPagina2(){
