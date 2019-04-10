@@ -123,9 +123,13 @@ public class LineaBean implements Serializable{
 		return "home.xhtml";
 	}
 	
-	public String cambiarPagina2(){
+	public String cambiarPagina2Desktop(){
 
-		return "pagina2.xhtml";
+		return "desktopHorario.xhtml";
+	}
+	public String cambiarPagina2Phone(){
+
+		return "phoneHorario.xhtml";
 	}
 	
 
