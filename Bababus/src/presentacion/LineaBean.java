@@ -38,7 +38,7 @@ public class LineaBean implements Serializable{
 	
 	@EJB
 	private Servicios negocio;
-	
+	//Set and get datos miembro
 	public List<Linea> getLineas() {
 		return lineas;
 	}
@@ -62,9 +62,6 @@ public class LineaBean implements Serializable{
 	public void setIndice1(int indice1) {
 		this.indice1 = indice1;
 		entity.setIdLinea(lineas.get(indice1).getIdLinea());
-		
-		
-	
 	}
 
 	public List<SelectItem> getItems2() {
@@ -87,19 +84,10 @@ public class LineaBean implements Serializable{
 		//return entity2;
 	//}
 
-
-	
-	
-	
-	
+	//metodos
 	public Linea getEntity() {
 		return entity;
-	}
-
-	
-	
-	
-	
+	}	
 	public List<LineaHorario> getListLineaHorario(){
 		
 		
@@ -135,9 +123,7 @@ public class LineaBean implements Serializable{
 
 	public List<LineaParada> getListLineaParada(){
 		
-		
-		return negocio.getListLineaParadaDB(entity.getIdLinea());
-		
+		return negocio.getListLineaParadaDB(entity.getIdLinea());		
 	}
 
 	@PostConstruct

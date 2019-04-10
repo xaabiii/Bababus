@@ -9,25 +9,24 @@
 	<h:outputStylesheet name="css/stylePhone.css"  />
 </h:head> 
 <body> 
-	<h:form>		
-		<h:outputText value="Linea seleccionada:" />
-		<h:outputText value="#{lineaBean.entity.origenDestino}" />
-		<h:dataTable value="#{lineaBean.getListLineaHorario()}" var="hora" border="1">
+	<h:form>
+		<h1>Where is my Bus?</h1>		
+		<p>Linea seleccionada:</p>
+		<h:outputText value="#{lineaBean.entity.origenDestino}"/>
+		<br/> 
+		<h:dataTable value="#{lineaBean.getListLineaHorario()}" var="hora" border="1" id="horario">
 			<h:column>
 				<f:facet name="header">HORARIO</f:facet>
 				<h:outputText value="#{hora.horario.hora}" />
 			</h:column>		
 		</h:dataTable>
 		
-		
-		<h:outputText value="En qué parada se encuentra?" />
+		<p>Selecciona Parada:</p>
 		<h:selectOneMenu value="#{lineaBean.indice2}">
 			<f:selectItems value="#{lineaBean.items2}"></f:selectItems>
 		</h:selectOneMenu>
 		<h:commandButton action="#{lineaBean.getListLineaParada()}" value="Seleccionar" /><br />
-		<h:commandButton action="#{lineaBean.cambiarPagina1()}" value="Volver al menú principal" />
-
-		
+		<h:commandButton action="#{lineaBean.cambiarPagina1()}" value="Volver" />	
 	</h:form>
 </body>  
 </html>

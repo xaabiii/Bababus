@@ -21,7 +21,7 @@ p{
 
 input[type=submit] {
   width: 100%;
-  background-color: blue;
+  background-color: #31cab2;
   color: white;
   padding: 100px 20px;
   margin: 10px 0;
@@ -38,5 +38,24 @@ select {
   border-radius: 4px;
   box-sizing: border-box;
   font-size: 400%;
+}
+
+table {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  text-align: center;
+}
+td,  th {
+  border: 1px solid white;
+  padding: 8px;
+}
+tr:nth-child(even){background-color: #c3e2f0;}
+th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: #1d8a8a;
+  color: white;
 }
 
