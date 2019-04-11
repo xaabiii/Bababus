@@ -6,27 +6,54 @@
 
 <h:head>
 	<title>BABABUS</title>
-	<h:outputStylesheet name="css/styleDesktop.css"  />
+	<h:outputStylesheet name="css/style.css"  />
+	<meta name='viewport'
+      content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
 </h:head> 
 <body> 
-	<h:form>		
-		<h1>Where is my Bus?</h1>		
-		<p>Linea seleccionada:</p>
+	<div class='page'>
+	<h:form>
+	
+		<div class='section titulo'>
+		<h1>Where is my Bus?</h1>
+		</div>
+		
+		<div class='section textoLinea'>
+		<p>Línea seleccionada:</p>
+		</div>
+		
+		<div class='section lineaSel'>		
 		<h:outputText value="#{lineaBean.entity.origenDestino}"/>
-		<br/> 
+		</div>
+		
+		<div class='section tablaHorario'>
 		<h:dataTable value="#{lineaBean.getListLineaHorario()}" var="hora" border="1" id="horario">
 			<h:column>
 				<f:facet name="header">HORARIO</f:facet>
 				<h:outputText value="#{hora.horario.hora}" />
 			</h:column>		
 		</h:dataTable>
+		</div>
 		
-		<p>Selecciona Parada:</p>
+		<div class='section textoParada'>
+		<p>Selecciona parada:</p>
+		</div>
+
+		<div class='section selectItemsParada'>
 		<h:selectOneMenu value="#{lineaBean.indice2}">
 			<f:selectItems value="#{lineaBean.items2}"></f:selectItems>
 		</h:selectOneMenu>
-		<h:commandButton action="#{lineaBean.getListLineaParada()}" value="Seleccionar" /><br />
-		<h:commandButton action="#{lineaBean.cambiarPagina1()}" value="Volver" />
+		</div>
+		
+		<div class='section botonEnviarp2'>
+		<h:commandButton action="#{lineaBean.getListLineaParada()}" value="Seleccionar" />
+		</div>
+		
+		<div class='section botonVolverp2'>
+		<h:commandButton action="#{lineaBean.cambiarPagina1()}" value="Volver" />	
+		</div>
+		
 	</h:form>
+	</div>
 </body>  
 </html>

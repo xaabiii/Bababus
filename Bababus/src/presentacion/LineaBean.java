@@ -78,11 +78,8 @@ public class LineaBean implements Serializable{
 
 	public void setIndice2(int indice2) {
 		this.indice2 = indice2;
-		//entity2.
+		
 	}
-	//public Parada getEntity2() {
-		//return entity2;
-	//}
 
 	//metodos
 	public Linea getEntity() {
@@ -111,18 +108,14 @@ public class LineaBean implements Serializable{
 		return "home.xhtml";
 	}
 	
-	public String cambiarPagina2Desktop(){
-
-		return "desktopHorario.xhtml";
+	public String cambiarPagina2(){
+		entity.setOrigenDestino(lineas.get(indice1).getOrigenDestino());
+		return "pag2.xhtml";
 	}
-	public String cambiarPagina2Phone(){
 
-		return "phoneHorario.xhtml";
-	}
 	
 
 	public List<LineaParada> getListLineaParada(){
-		
 		return negocio.getListLineaParadaDB(entity.getIdLinea());		
 	}
 
