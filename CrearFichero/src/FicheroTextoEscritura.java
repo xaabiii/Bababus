@@ -30,11 +30,19 @@ public class FicheroTextoEscritura extends Fichero {
 		}
 	}
 	
-	public void volvarArrayFichero(List<String> lista)
+	public void volvarArrayFicheroLatitudes(List<String> lista)
 	{
-		for(int i = 0,j = 1; i <lista.size() && j < lista.size();i = i+2,j = j+2)
+		for(int i = 0; i <lista.size();i = i+2)
 		{
-			pw.println(lista.get(i)+" "+lista.get(j));
+			pw.println(lista.get(i));
+			
+		}
+	}
+	public void volvarArrayFicheroLongitudes(List<String> lista)
+	{
+		for(int i = 1; i <lista.size();i = i+2)
+		{
+			pw.println(lista.get(i));
 			
 		}
 	}

@@ -7,10 +7,14 @@ public class Main {
 		ftl.abrirFichero();
 		List<String> lista = ftl.volcarFicheroArray();
 		ftl.cerrarFichero();
-		FicheroTextoEscritura fte = new FicheroTextoEscritura("nuevo.txt");
-		fte.abrirFichero();
-		fte.volvarArrayFichero(lista);
-		fte.cerrarFichero();
+		FicheroTextoEscritura fte1 = new FicheroTextoEscritura("BilbaoVitoriaLatitudes.txt");
+		fte1.abrirFichero();
+		FicheroTextoEscritura fte2 = new FicheroTextoEscritura("BilbaoVitoriaLongitudes.txt");
+		fte2.abrirFichero();
+		fte1.volvarArrayFicheroLatitudes(lista);
+		fte1.cerrarFichero();
+		fte2.volvarArrayFicheroLongitudes(lista);
+		fte2.cerrarFichero();
 		
 		
 		
