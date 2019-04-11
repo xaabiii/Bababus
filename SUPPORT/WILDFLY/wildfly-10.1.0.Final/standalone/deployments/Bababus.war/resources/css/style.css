@@ -3,9 +3,13 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 .page {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+  margin:auto;
+  justify-content: center;
+  align-items: center;
 }
 
 .section {
@@ -18,18 +22,15 @@
 .titulo {
   order: 1;
   text-align: center;
-  width: 100%;
   font-weight: bold;
-  text-decoration: underline;
 }
 
 .textoItems {
   order: 2;
 }
 
-.selectItemsLinea' {
-	order: 3;
-  
+.selectItemsLinea{
+	order: 3; 
 }
 
 .botonEnviarp1{
@@ -41,10 +42,11 @@
 }
 
 .lineaSel {
+  font-style:italic;	
   order: 3;
 }
 
-.tablaHorario {
+.tablaHorario{
   order: 4;
 }
 
@@ -67,62 +69,76 @@
     background-color: #c4f371; /* Green */
   }
   .titulo{
-  color: white;
   font-size: 100%;
   }
   .tablaHorario {
-  order:1;
+  order:9;
   }
-  .textoItems,
+  .textoItems,.selectItemsLinea,
   .textoLinea,.lineaSel,.textoParada{
-  	color: white;
+  	font-size: 150%;
   }
   
 }
 
+
 /* Desktop Styles */
 @media only screen and (min-width: 1000px) {
   body {
-    background-color: #B2D6FF; /* Blue */
-    
-  }
-  .page {
-    width: 1000px;
-  }
-  .section{
-  	justify-content: left;
-  	align-items: left;
+    background-color: #B2D6FF; /* Blue */ 
   }
   
   .titulo{
   font-size: 200%;
   }
-  
   .textoItems,.selectItemsLinea,
   .textoLinea,.lineaSel, .textoParada,.selectItemsParada{
   	width: 50%;
+  	display: table-cell;
   	font-size: 150%;
   }
   
-  .tablaHorario {
-  	width: 50%;
-  	justify-content: right;
+  /*tabla*/
+  .tablaHorario{
+  	width: 20%;
+  	display:table;
+  	float: right;
   	border-collapse: collapse;
   	text-align:center;
-	}
-	td,  th {
+  }
+	td, th {
 	  border: 1px solid white;
 	  padding: 8px;
-	  width: 100%;
+	  width: 150%;
 	}
 	tr:nth-child(even){background-color: #c3e2f0;}
+	tr:hover{background-color: #90acb8;}
 	th {
-	 width: 100%;
 	  padding-top: 12px;
 	  padding-bottom: 12px;
 	  text-align: center;
 	  background-color: #1d8a8a;
 	}
-  }
-  
+	/*Input*/
+	.botonEnviarp2{
+		width: 79%;
+		justify-content:right;
+	}
+	input[type=submit] {
+	  
+	  background-color: #31cab2;
+	  border: none;
+	  font-size: 100%;
+	  border-style: ridge;
+	}
+	select {
+	  width: 100%;
+	  display: inline-block;
+	  box-sizing: border-box;
+	}
+	input:hover, select:hover {background-color: #90acb8;}
+	
+}
+	
+  }  
 }
