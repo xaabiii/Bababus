@@ -38,7 +38,7 @@ public class LineaBean implements Serializable{
 	
 	@EJB
 	private Servicios negocio;
-	
+	//Set and get datos miembro
 	public List<Linea> getLineas() {
 		return lineas;
 	}
@@ -62,9 +62,6 @@ public class LineaBean implements Serializable{
 	public void setIndice1(int indice1) {
 		this.indice1 = indice1;
 		entity.setIdLinea(lineas.get(indice1).getIdLinea());
-		
-		
-	
 	}
 
 	public List<SelectItem> getItems2() {
@@ -81,25 +78,13 @@ public class LineaBean implements Serializable{
 
 	public void setIndice2(int indice2) {
 		this.indice2 = indice2;
-		//entity2.
+		
 	}
-	//public Parada getEntity2() {
-		//return entity2;
-	//}
 
-
-	
-	
-	
-	
+	//metodos
 	public Linea getEntity() {
 		return entity;
-	}
-
-	
-	
-	
-	
+	}	
 	public List<LineaHorario> getListLineaHorario(){
 		
 		
@@ -120,20 +105,18 @@ public class LineaBean implements Serializable{
 		//HttpSession sesion=(HttpSession) FacesContext.getCurrentInstance().getExternalContext().getSession(false);//para que deaparezca el texto que hemos
 		//sesion.invalidate();
 		
-		return "pagina1.xhtml";
+		return "home.xhtml";
 	}
 	
 	public String cambiarPagina2(){
-
-		return "pagina2.xhtml";
+		entity.setOrigenDestino(lineas.get(indice1).getOrigenDestino());
+		return "pag2.xhtml";
 	}
+
 	
 
 	public List<LineaParada> getListLineaParada(){
-		
-		
-		return negocio.getListLineaParadaDB(entity.getIdLinea());
-		
+		return negocio.getListLineaParadaDB(entity.getIdLinea());		
 	}
 
 	@PostConstruct

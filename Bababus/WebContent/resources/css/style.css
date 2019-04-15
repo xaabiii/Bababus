@@ -1,0 +1,126 @@
+* {
+  margin: 2px;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.page {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.titulo {
+  text-align: center;
+  font-weight: bold;
+}
+
+
+.lineaSel {
+  font-style:italic;	
+}
+
+/* Mobile Styles */
+@media only screen and (max-width: 999px) {
+  body {
+    background-color: #c4f371; /* Green */
+  }
+  .titulo{
+  font-size: 100%;
+  }
+  .textoItems,.selectItemsLinea,
+  .textoLinea,.lineaSel,.textoParada{
+  	font-size: 120%;
+  }
+  /*Tabla*/
+  .tablaHorario {
+  width:100%;
+  position:absolute;
+  bottom: 0;
+  left:0%;
+  justify-content: center;
+  align-items: center;
+  text-align:center;
+  }
+  table{width:100%}
+  td, th {
+	  border: 1px solid white;
+	  padding: auto;
+	  width: 150%;
+	}
+	tr:nth-child(even){background-color: #c5df7d;}
+	th {
+	  padding-top: auto;
+	  padding-bottom: auto;
+	  text-align: center;
+	  background-color: #98af5a
+	}
+}
+
+
+/* Desktop Styles */
+@media only screen and (min-width: 1000px) {
+  body {
+    background-color: #B2D6FF; /* Blue */ 
+  }
+  
+  .titulo{
+  font-size: 200%;
+  }
+  .textoItems,.selectItemsLinea,
+  .textoLinea,.lineaSel, .textoParada,.selectItemsParada{
+  	width: 50%;
+  	display: table-cell;
+  	font-size: 150%;
+  }
+  
+  /*tabla*/
+  .tablaHorario{
+  	width: 20%;
+  	display:table;
+  	float: right;
+  	border-collapse: collapse;
+  	text-align:center;
+  }
+	td, th {
+	  border: 2px solid gray;
+	  padding: 8px;
+	  width: 150%;
+	}
+	tr:nth-child(even){background-color: #c3e2f0;}
+	tr:hover{background-color: #90acb8;}
+	th {
+	  padding-top: 12px;
+	  padding-bottom: 12px;
+	  text-align: center;
+	  background-color: #7db5ba;
+	}
+	
+	/*Input*/
+	.botonEnviarp2{
+		width: 73%;
+		justify-content:right;
+	}
+	input[type=submit] {
+	  font-size: 100%;
+	  border-style: ridge;
+	}
+	select {
+	  width: 100%;
+	  display: inline-block;
+	  box-sizing: border-box;
+	}
+	input:hover, select:hover {background-color: #90acb8;}
+	
+}
+	
+  }  
+}
