@@ -1,14 +1,20 @@
 package negocio;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
 import javax.ejb.LocalBean;
+import javax.ejb.Schedule;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
+import datos.Autobus;
 import datos.FicheroTextoLectura;
 import datos.Linea;
 import datos.LineaHorario;
@@ -24,8 +30,10 @@ public class Servicios implements Serializable{
 	/**
 	 * 
 	 */
+	private String PATH="/docencia/cuentas/8/806009/Bababus/Bababus/SarrikoDeustoNuevo.txt";
 	private static final long serialVersionUID = 1L;
 	
+	private int indice=0;
 	@PersistenceContext
 	private EntityManager em;
 	
@@ -60,6 +68,142 @@ public class Servicios implements Serializable{
 		
 		return LineaParadas;
 	}
+	
+	@Schedule(second="*/10", minute="*", hour="*", persistent=false)
+    public void AutobusBV(){
+       
+
+        int numlinea=-1;
+        indice=indice+1;
+        try (BufferedReader br = new BufferedReader(new FileReader(PATH))) {
+            String line;
+            while ((line = br.readLine()) != null) {
+               // process the line.
+               
+                numlinea=numlinea+1;
+               
+                if(numlinea == indice){
+               
+                    System.out.println("linea:");
+                    System.out.println(line);
+                    System.out.println("numlinea:");
+                    System.out.println(numlinea);
+                    System.out.println("indice:");
+                    System.out.println(indice);
+                    Autobus a = new Autobus();
+                    a=em.find(Autobus.class, 1);
+                    a.setCoordenadas(line);
+                    em.persist(a);
+                    
+
+                }
+            }
+        } catch (FileNotFoundException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+       
+    }
+	
+	@Schedule(second="*/10", minute="*", hour="*", persistent=false)
+    public void AutobusVB(){
+       
+
+        int numlinea=-1;
+        indice=indice+1;
+        try (BufferedReader br = new BufferedReader(new FileReader(PATH))) {
+            String line;
+            while ((line = br.readLine()) != null) {
+               // process the line.
+               
+                numlinea=numlinea+1;
+               
+                if(numlinea == indice){
+               
+                    Autobus a = new Autobus();
+                    a=em.find(Autobus.class, 2);
+                    a.setCoordenadas(line);
+                    em.persist(a);
+                    
+
+                }
+            }
+        } catch (FileNotFoundException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+       
+    }
+	@Schedule(second="*/10", minute="*", hour="*", persistent=false)
+    public void AutobusVL(){
+       
+
+        int numlinea=-1;
+        indice=indice+1;
+        try (BufferedReader br = new BufferedReader(new FileReader(PATH))) {
+            String line;
+            while ((line = br.readLine()) != null) {
+               // process the line.
+               
+                numlinea=numlinea+1;
+               
+                if(numlinea == indice){
+               
+                    Autobus a = new Autobus();
+                    a=em.find(Autobus.class, 3);
+                    a.setCoordenadas(line);
+                    em.persist(a);
+                    
+
+                }
+            }
+        } catch (FileNotFoundException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+       
+    }
+	@Schedule(second="*/10", minute="*", hour="*", persistent=false)
+    public void AutobusLV(){
+       
+
+        int numlinea=-1;
+        indice=indice+1;
+        try (BufferedReader br = new BufferedReader(new FileReader(PATH))) {
+            String line;
+            while ((line = br.readLine()) != null) {
+               // process the line.
+               
+                numlinea=numlinea+1;
+               
+                if(numlinea == indice){
+               
+                    Autobus a = new Autobus();
+                    a=em.find(Autobus.class, 4);
+                    a.setCoordenadas(line);
+                    em.persist(a);
+                    
+
+                }
+            }
+        } catch (FileNotFoundException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+       
+    }
 		
 
 }
