@@ -3,11 +3,11 @@ import java.util.List;
 public class Main {
 
 	public static void main(String[] args) {
-		FicheroTextoLectura ftl = new FicheroTextoLectura("FloridaCalleValladolid.txt");
+		FicheroTextoLectura ftl = new FicheroTextoLectura("CalleValladolidFlorida.txt");
 		ftl.abrirFichero();
 		List<String> lista = ftl.volcarFicheroArray();
 		ftl.cerrarFichero();
-		FicheroTextoEscritura fte1 = new FicheroTextoEscritura("FloridaCalleValladolidNuevo.txt");
+		FicheroTextoEscritura fte1 = new FicheroTextoEscritura("CalleValladolidFloridaNuevo.txt");
 		fte1.abrirFichero();
 		//FicheroTextoEscritura fte2 = new FicheroTextoEscritura("SarrikoDeustoLongitudes.txt");
 		//fte2.abrirFichero();
