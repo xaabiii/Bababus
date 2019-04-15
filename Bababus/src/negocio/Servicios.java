@@ -9,6 +9,7 @@ import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
+import datos.Autobus;
 import datos.FicheroTextoLectura;
 import datos.Linea;
 import datos.LineaHorario;
@@ -59,6 +60,11 @@ public class Servicios implements Serializable{
 		List<LineaParada> LineaParadas = (List<LineaParada>) em.createNamedQuery("LineaParadaIdLinea").setParameter("idLinea", id).getResultList();
 		
 		return LineaParadas;
+	}
+	
+	public String getCoordenada(int idAutobus)
+	{
+		Autobus auto = em.create
 	}
 		
 
