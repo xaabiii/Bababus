@@ -43,10 +43,10 @@ insert into Horario(hora) value("20:10");
 insert into Horario(hora) value("21:10");
 select * from Horario;
 
-insert into Autobus(coordenadas) values ("0.000000,0.000000");
-insert into Autobus(coordenadas) values ("0.000000,0.000000");
-insert into Autobus(coordenadas) values ("0.000000,0.000000");
-insert into Autobus(coordenadas) values ("0.000000,0.000000");
+insert into Autobus(coordenadas, plazas) values ("0.000000,0.000000","10");
+insert into Autobus(coordenadas, plazas) values ("0.000000,0.000000","10");
+insert into Autobus(coordenadas, plazas) values ("0.000000,0.000000","10");
+insert into Autobus(coordenadas, plazas) values ("0.000000,0.000000","10");
 select * from Autobus;
 
 insert into Linea(origenDestino, Autobus_idAutobus) values ("Bilbao-Vitoria", "1");
