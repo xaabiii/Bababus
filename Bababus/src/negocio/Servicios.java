@@ -1,11 +1,10 @@
 package negocio;
 
-import java.io.BufferedReader;
+import java.io.BufferedReader; 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.ejb.LocalBean;
@@ -15,7 +14,6 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 import datos.Autobus;
-import datos.FicheroTextoLectura;
 import datos.Linea;
 import datos.LineaHorario;
 import datos.LineaParada;
@@ -30,7 +28,7 @@ public class Servicios implements Serializable{
 	/**
 	 * 
 	 */
-	private String PATH="/docencia/cuentas/8/806009/Bababus/Bababus/SarrikoDeustoNuevo.txt";
+	private String PATH="/home/gloria/Bababus/Bababus/SarrikoDeustoNuevo.txt";
 	private static final long serialVersionUID = 1L;
 	
 	private int indice=0;
@@ -204,6 +202,13 @@ public class Servicios implements Serializable{
         }
        
     }
+	
+	public String getCoordenadaDB(int idAutobus)
+	{
+		Autobus autob = new Autobus();
+		autob = (Autobus) em.createNamedQuery("Autobus.findAuto").setParameter("idAutobus", idAutobus).getSingleResult();
+		return autob.getCoordenadas();
+	}
 		
 
 }

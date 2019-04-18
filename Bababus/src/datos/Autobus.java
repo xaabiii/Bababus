@@ -9,7 +9,10 @@ import javax.persistence.*;
  * 
  */
 @Entity
-@NamedQuery(name="Autobus.findAll", query="SELECT a FROM Autobus a")
+@NamedQueries({
+	@NamedQuery(name="Autobus.findAll", query="SELECT a FROM Autobus a"),
+	@NamedQuery(name="Autobus.findAuto", query="SELECT a FROM Autobus a WHERE a.idAutobus=:idAutobus")
+})
 public class Autobus implements Serializable {
 	private static final long serialVersionUID = 1L;
 
