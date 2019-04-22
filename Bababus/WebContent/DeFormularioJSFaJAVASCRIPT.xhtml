@@ -8,14 +8,14 @@
 <title>Seguimiento</title>
 <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.1/mapbox-gl.js'></script>
 <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.1/mapbox-gl.css' rel='stylesheet' />	
-<div id='map'></div>      
+<h:outputStylesheet library="css" name="/home/gloria/Bababus/Bababus/WebContent/cssmapa.css" />
+<div id='map'></div>  
 <script>
 
 	function onCall(form) {  
 		var lat=form["formname:lati"].value;
 		var lon=form["formname:longi"].value;
-		_img = document.getElementById('map').innerHTML = "Su autobús se encuentra aquí";
-		l = document.getElementById('map').innerHTML = lat;
+		l = document.getElementById('map').innerHTML = lon;
 		
 		
 		mapboxgl.accessToken = 'pk.eyJ1IjoiYmFiYWxpZXIiLCJhIjoiY2p0d3d3dDExMHRkeDQ0cGxqM2h4ZnBmbSJ9.ApporbXy5_wb4TjEUHnWmQ';
@@ -26,7 +26,35 @@
 			center: [lat, lon]
 			});
 
-			
+		map.on('load', function() {
+			mapboxgl.accessToken = 'pk.eyJ1IjoiYmFiYWxpZXIiLCJhIjoiY2p0d3d3dDExMHRkeDQ0cGxqM2h4ZnBmbSJ9.ApporbXy5_wb4TjEUHnWmQ';
+			map.loadImage('https://thumbs.dreamstime.com/z/el-autob%C3%BAs-para-dise%C3%B1o-aislado-perno-del-icono-de-la-ubicaci%C3%B3n-74194648.jpg', function(error, image) {
+			if (error) throw error;
+				map.addImage('cat', image);
+				map.addLayer({
+				"id": "points",
+				"type": "symbol",
+				"source": {
+				"type": "geojson",
+				"data": {
+				"type": "FeatureCollection",
+				"features": [{
+				"type": "Feature",
+				"geometry": {
+				"type": "Point",
+				"coordinates": [lat, lon]
+				}
+				}]
+				}
+				},
+				"layout": {
+				"icon-image": "cat",
+				"icon-size": 0.025
+				}
+			});
+			});
+			});			
+	
 	}
 
 </script>
@@ -34,7 +62,7 @@
 
 
 <body>
-<h:form id="formname">
+<h:form id="formname" onsubmit="return false;">
 	<h:commandButton action="#{temporizadorMB.preparaCoordenada()}" value="prepara" />
 	<h:inputHidden id="lati" value="#{temporizadorMB.latitud}" />
 	<h:inputHidden id="longi" value="#{temporizadorMB.longitud}" />
