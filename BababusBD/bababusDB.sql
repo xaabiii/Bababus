@@ -91,7 +91,8 @@ DROP TABLE IF EXISTS `ExamenSta`.`Usuario` ;
 CREATE TABLE IF NOT EXISTS `ExamenSta`.`Usuario` (
   `idUsuario` INT(11) NOT NULL AUTO_INCREMENT,
   `tiempoAviso` VARCHAR(45) NULL,
-  `reserva` TINYINT(1) NULL DEFAULT NULL,
+  `reserva` VARCHAR(45) NULL DEFAULT NULL,
+  `email` VARCHAR(45) NULL,
   `Linea_idLinea` INT(11) NOT NULL,
   `Parada_idParadas` INT NOT NULL,
   `Horario_idHorario` INT(11) NULL,
