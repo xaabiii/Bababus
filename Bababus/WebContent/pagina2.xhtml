@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+
+<h:head>
+	<title>BABABUS</title>
+</h:head> 
+<body> 
+	<h:form>
+		<h1>Bienvenido Babalier</h1>
+		
+		<h:outputText value="Linea seleccionada:" />
+		<h:outputText value="#{lineaBean.entity.origenDestino}" />
+		<h:dataTable value="#{lineaBean.getListLineaHorario()}" var="hora" border="1">
+			<h:column>
+				<f:facet name="header">HORARIO</f:facet>
+				<h:outputText value="#{hora.horario.hora}" />
+			</h:column>		
+		</h:dataTable>
+		
+		
+		<h:outputText value="En qué parada se encuentra?" />
+		<h:selectOneMenu value="#{lineaBean.indice2}">
+			<f:selectItems value="#{lineaBean.items2}"></f:selectItems>
+		</h:selectOneMenu>
+		<!--  <h:commandButton action="#{lineaBean.getListLineaParada()}" value="Seleccionar" /><br />-->
+		<h:commandButton action="#{lineaBean.cambiarPagina1()}" value="Volver al menú principal" />
+		
+		
+		<h:commandButton action="#{lineaBean.calcularTiempo()}" value="Seleccionar" /><br />
+		<h:outputText value="El siguiente bababus llegara en " rendered="#{lineaBean.ver}"/>
+		<h:outputText value="#{lineaBean.calcularTiempo()}" rendered="#{lineaBean.ver}"/>
+		<h:outputText value=" a la parada: " rendered="#{lineaBean.ver}"/>
+		<h:commandButton action="#{lineaBean.cambiarPagina3()}" value="Reservar plaza" /><br />
+		
+
+		
+	</h:form>
+</body>  
+</html>

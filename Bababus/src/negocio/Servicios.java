@@ -616,6 +616,77 @@ public class Servicios implements Serializable{
 	
 
 }
+
+public String calcularTiempo(int id){
+		
+		LineaParada lp = new LineaParada();
+		lp=em.find(LineaParada.class, id);
+		
+		String tiempo="xxx";
+		int horas=0;
+		int minutos=0;
+		int segundos=0;
+		String bus_coordenadas;
+		String parada_coordenadas;
+		bus_coordenadas=lp.getLinea().getAutobus().getCoordenadas();
+		parada_coordenadas=lp.getParada().getCoordenadas();
+		
+		int numlineas=-1;
+		try (BufferedReader br = new BufferedReader(new FileReader("/home/danel/Escritorio/coordenadas.txt"))) {
+		    String line;
+		    boolean salir=false;
+		    boolean contar=false;
+		    
+		    while ((line = br.readLine()) != null && salir == false) {
+		       // process the line.
+		    	if(line.equals(bus_coordenadas)){
+		    		
+		    		contar=true;
+		    	}
+		    	if(contar==true){
+		    		
+		    		numlineas=numlineas+1;
+			    	System.out.println("empezamos a contar:");
+			    	System.out.println("linea:");
+			    	System.out.println(line);
+			    	System.out.println("parada_coordenadas:");
+			    	System.out.println(parada_coordenadas);
+			    	System.out.println("numero de lineas:");
+			    	System.out.println(numlineas);
+			    	
+			    	if(line.equals(parada_coordenadas)){
+			    	
+			    		System.out.println("ACERTAMOS:");
+				    	System.out.println("linea:");
+				    	System.out.println(line);
+				    	System.out.println("parada_coordenadas:");
+				    	System.out.println(parada_coordenadas);
+				    	salir = true;
+				    	
+				    	segundos=numlineas * 40;
+				    	
+				    	horas=segundos / 3600;
+				    	minutos = (segundos % 3600) / 60;
+				    	tiempo = String.format("%02d:%02d", horas, minutos);
+		    	}
+		    	
+
+		    	}
+		    }
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+		}
+		
+		
+		
+		return tiempo;
+		
+		
+		
+	}
 		
 
 }

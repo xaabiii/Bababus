@@ -132,6 +132,14 @@ public class LineaBean implements Serializable{
 		
 		
 	}
+
+public String calcularTiempo(){
+		
+		ver=true;
+		
+		return negocio.calcularTiempo(entity2.getIdLineaParadas());
+		
+	}
 	
 
 	
