@@ -48,9 +48,9 @@ public class FicheroTextoEscritura extends Fichero {
 	}
 	public void volcarArrayFichero(List<String> lista)
 	{
-		for(int i = 0,j = 1; i < lista.size() && j < lista.size(); i = i + 20,j = j + 20)
+		for(int i = 0,j = 1; i < lista.size() && j < lista.size(); i = i + 2,j = j + 2)
 		{
-			pw.println(lista.get(i)+","+lista.get(j));
+			pw.println("["+lista.get(j)+","+lista.get(i)+"]");
 		}
 	}
 	
