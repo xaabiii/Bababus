@@ -1,0 +1,77 @@
+<!DOCTYPE html> 
+<head>
+		<title>BABABUS</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
+
+<head> 
+<body> 
+	<div class='page'>
+	<form>
+	
+		<div class='section titulo'>
+		<h1>Where is my Bus?</h1>
+		</div>
+		
+		<div class='section textoLinea'>
+		<p>Línea seleccionada: </p>
+		</div>
+		
+		<div class='section lineaSel'>		
+				<p>bla bla bla</p>
+		</div>
+		
+		<div class='section divTablaHorario'>
+				<input type='checkbox' id='botonTabla'/>
+				<label id='showBtn' for='botonTabla'>Ver horario</label>
+				<label id='hideBtn' for='botonTabla'>Ocultar horario</label>
+			<table id="tablaHorario">
+					<tr>
+						<th>Horario</th>
+					</tr>
+					<tr>
+						<td>0:00</td>
+					</tr>
+					<tr>
+						<td>5:00</td>
+					</tr>
+					<tr>
+						<td>10:00</td>
+					</tr>
+					<tr>
+						<td>15:00</td>
+					</tr>
+					<tr>
+						<td>20:00</td>
+					</tr>
+					<tr>
+						<td>24:00</td>
+					</tr>
+				</table>
+		</div>
+		
+		<div class='section textoParada'>
+		<p>Selecciona parada: </p>
+		</div>
+
+		<div class='section selectItemsParada'>
+			<select name="parada">
+					<option value="aaaa">aaaa</option>
+					<option value="bbbb">bbbb</option>
+					<option value="cccc">cccc</option>
+					<option value="dddd">dddd</option>
+				</select>
+		</div>
+		
+		<div class='section botonEnviarp2'>
+			<input type="submit" value="Seleccionar" />
+		</div>
+		
+		<div class='section botonVolverp2'>
+				<input type="button" value="volver" onclick="history.back()">
+		</div>
+		
+	</form>
+	</div>
+</body>  
+</html>
