@@ -1,0 +1,327 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+
+<h:head>
+<title>Seguimiento</title>
+<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.1/mapbox-gl.js'></script>
+<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.1/mapbox-gl.css' rel='stylesheet' />	
+<div id='map'></div>  
+
+<script type="text/javascript">
+	function onCall(form) {  
+		lat=form["formname:lati"].value;
+		lon=form["formname:longi"].value;
+		document.getElementById("map").style.position="absolute";
+		document.getElementById("map").style.top= "50px";
+		document.getElementById("map").style.bottom= "0";
+		document.getElementById("map").style.width= "100%";
+		
+		mapboxgl.accessToken = 'pk.eyJ1IjoicGVwZWl0bzg4IiwiYSI6ImNqdThqMWY0dDEwNGs0NG56OG5saXZxamUifQ.CGuqMfSgyWL63hkBvc4wDA';
+		var map = new mapboxgl.Map({
+			container: 'map',
+			style: 'mapbox://styles/mapbox/streets-v11',
+			zoom: 12,
+			center: [lon, lat]
+			});
+		
+		map.on('load', function() {
+			mapboxgl.accessToken = 'pk.eyJ1IjoicGVwZWl0bzg4IiwiYSI6ImNqdThqMWY0dDEwNGs0NG56OG5saXZxamUifQ.CGuqMfSgyWL63hkBvc4wDA';
+			map.loadImage('https://thumbs.dreamstime.com/z/el-autob%C3%BAs-para-dise%C3%B1o-aislado-perno-del-icono-de-la-ubicaci%C3%B3n-74194648.jpg', function(error, image) {
+			if (error) throw error;
+				map.addImage('cat', image);
+				map.addLayer({
+				"id": "points",
+				"type": "symbol",
+				"source": {
+				"type": "geojson",
+				"data": {
+				"type": "FeatureCollection",
+				"features": [{
+				"type": "Feature",
+				"geometry": {
+				"type": "Point",
+				"coordinates": [lon, lat]
+				}
+				}]
+				}
+				},
+				"layout": {
+				"icon-image": "cat",
+				"icon-size": 0.025
+				}
+			});
+			});
+			//))});	
+
+		map.loadImage('bus-stop.png', function(error, image1) {
+			if (error) throw error;
+			map.addImage('PARADA1', image1);
+			map.addLayer({
+				"id": "points1",
+				"type": "symbol",
+				"source": {
+					"type": "geojson",
+					"data": {
+						"type": "FeatureCollection",
+						"features": [{
+							"type": "Feature",
+							"geometry": {
+								"type": "Point",
+								"coordinates": [-2.664004,42.853633]
+
+							}
+						}]
+					}
+				},
+				"layout": {
+					"icon-image": "PARADA1",
+					"icon-size": 0.1
+				}
+			});
+		});
+		map.loadImage('bus-stop.png', function(error, image1) {
+			if (error) throw error;
+			map.addImage('PARADA2', image1);
+			map.addLayer({
+				"id": "points2",
+				"type": "symbol",
+				"source": {
+					"type": "geojson",
+					"data": {
+						"type": "FeatureCollection",
+						"features": [{
+							"type": "Feature",
+							"geometry": {
+								"type": "Point",
+								"coordinates": 
+									[-2.950555,43.262793]
+							}
+						}]
+					}
+				},
+				"layout": {
+					"icon-image": "PARADA2",
+					"icon-size": 0.1
+				}
+			});
+		});
+		map.loadImage('bus-stop.png', function(error, image1) {
+			if (error) throw error;
+			map.addImage('PARADA3', image1);
+			map.addLayer({
+				"id": "points3",
+				"type": "symbol",
+				"source": {
+					"type": "geojson",
+					"data": {
+						"type": "FeatureCollection",
+						"features": [{
+							"type": "Feature",
+							"geometry": {
+								"type": "Point",
+								"coordinates": 
+									[-2.664004,42.853633]
+							}
+						}]
+					}
+				},
+				"layout": {
+					"icon-image": "PARADA3",
+					"icon-size": 0.1
+				}
+			});
+		});
+		map.loadImage('bus-stop.png', function(error, image1) {
+			if (error) throw error;
+			map.addImage('PARADA4', image1);
+			map.addLayer({
+				"id": "points4",
+				"type": "symbol",
+				"source": {
+					"type": "geojson",
+					"data": {
+						"type": "FeatureCollection",
+						"features": [{
+							"type": "Feature",
+							"geometry": {
+								"type": "Point",
+								"coordinates": 
+									[-2.677219,42.843619]
+							}
+						}]
+					}
+				},
+				"layout": {
+					"icon-image": "PARADA4",
+					"icon-size": 0.1
+				}
+			});
+		});
+		map.loadImage('bus-stop.png', function(error, image1) {
+			if (error) throw error;
+			map.addImage('PARADA5', image1);
+			map.addLayer({
+				"id": "points5",
+				"type": "symbol",
+				"source": {
+					"type": "geojson",
+					"data": {
+						"type": "FeatureCollection",
+						"features": [{
+							"type": "Feature",
+							"geometry": {
+								"type": "Point",
+								"coordinates": 
+									[-2.668689,42.838459]
+							}
+						}]
+					}
+				},
+				"layout": {
+					"icon-image": "PARADA5",
+					"icon-size": 0.1
+				}
+			});
+		});
+		map.loadImage('bus-stop.png', function(error, image1) {
+			if (error) throw error;
+			map.addImage('PARADA6', image1);
+			map.addLayer({
+				"id": "points6",
+				"type": "symbol",
+				"source": {
+					"type": "geojson",
+					"data": {
+						"type": "FeatureCollection",
+						"features": [{
+							"type": "Feature",
+							"geometry": {
+								"type": "Point",
+								"coordinates": 
+									[-2.957911,43.274391]
+							}
+						}]
+					}
+				},
+				"layout": {
+					"icon-image": "PARADA6",
+					"icon-size": 0.1
+				}
+			});
+		});
+		
+		
+		
+		
+		
+		
+		
+		
+		//RECORRIDO
+		map.addLayer({
+			"id": "route",
+			"type": "line",
+			"source": {
+				"type": "geojson",
+				"data": {
+					"type": "Feature",
+					"properties": {},
+					"geometry": {
+						"type": "LineString",
+						"coordinates": [
+							[-2.95793,43.27436],
+							[-2.95713,43.27487],
+							[-2.95483,43.27384],
+							[-2.95417,43.27361],
+							[-2.95248,43.27305],
+							[-2.95108,43.2728],
+							[-2.94822,43.27231],
+							[-2.94736,43.2719],
+							[-2.94383,43.27164],
+							[-2.94186,43.27131],
+							[-2.94173,43.27108],
+							[-2.94177,43.27098],
+							[-2.957911,43.274391],
+							[-2.94221,43.27016],
+							[-2.94253,43.26937],
+							[-2.94404,43.2692],
+							[-2.94711,43.26838],
+							[-2.94896,43.2681],
+							[-2.94927,43.2681],
+							[-2.95006,43.26792],
+							[-2.9505,43.26766],
+							[-2.95018,43.26729],
+							[-2.94955,43.26745],
+							[-2.94783,43.26781],
+							[-2.94679,43.26757],
+							[-2.94597,43.2664],
+							[-2.94626,43.266],
+							[-2.94608,43.26552],
+							[-2.94549,43.26518],
+							[-2.94544,43.26484],
+							[-2.94632,43.26269],
+							[-2.94663,43.26234],
+							[-2.94638,43.26254],
+							[-2.9487,43.26176],
+							[-2.95498,43.26324],
+							[-2.95988,43.26357],
+							[-2.96088,43.26221],
+							[-2.95556,43.25941],
+							[-2.95144,43.25592],
+							[-2.94801,43.25294],
+							[-2.94416,43.25024],
+							[-2.93842,43.24766],
+							[-2.93146,43.24468],
+							[-2.92765,43.24181],
+							[-2.92258,43.23816],
+							[-2.91599,43.2334],
+							[-2.91478,43.22997],
+							[-2.9155,43.22472],
+							[-2.91166,43.22075],
+							[-2.90693,43.21781],
+							[-2.90143,43.21653],
+							[-2.8981,43.21543],
+							[-2.89548,43.2124],
+							[-2.89434,43.20836],
+							[-2.89272,43.20484],
+							[-2.89615,43.19827],
+							[-2.89467,43.18762],
+							[-2.89801,43.1814],
+							[-2.90327,43.17646],
+							[-2.91336,43.17348],
+							[-2.9183,43.16665],
+							[-2.92714,43.15871],
+							[-2.93523,43.15509]
+					]
+				}
+			}
+		},
+		"layout": {
+			"line-join": "round",
+			"line-cap": "round"
+		},
+		"paint": {
+			"line-color": "#0000FF",
+			"line-width": 8
+		}
+	});
+	});
+
+		
+	}
+</script>
+</h:head>
+
+
+<h:body>
+<h:form id="formname">
+	<h:commandButton action="#{temporizadorMB.preparaCoordenada()}" value="Actualiza" />
+	<h:inputHidden id="lati" value="#{temporizadorMB.latitud}" />
+	<h:inputHidden id="longi" value="#{temporizadorMB.longitud}" />
+	<h:commandButton value="Ver Mapa" onclick="onCall(this.form); return false;"/>
+</h:form>
+</h:body>	
+</html>
