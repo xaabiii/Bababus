@@ -28,35 +28,76 @@
   font-style:italic;	
 }
 
+/* hide the checkbox that manipulates table */
+#botonTabla{
+  display: none;
+}
+
 /* Mobile Styles */
 @media only screen and (max-width: 999px) {
   body {
     background-color: #c4f371; /* Green */
   }
+
   .titulo{
-  font-size: 100%;
+    font-size: 100%;
   }
+
   .textoItems,.selectItemsLinea,
   .textoLinea,.lineaSel,.textoParada{
   	font-size: 120%;
   }
+
   /*Tabla*/
-  .tablaHorario {
-  width:100%;
-  position:absolute;
-  bottom: 0;
-  left:0%;
-  justify-content: center;
-  align-items: center;
-  text-align:center;
+  .divTablaHorario {
+    background-color: #c4f371; /* Green */
+    width:100%;
+    position:absolute;
+    bottom: 0;
+    left:0%;
+    justify-content: center;
+    align-items: center;
+    text-align:center;
   }
-  table{width:100%}
+  #tablaHorario{
+    display: none;
+  }
+
+  #botonTabla ~ #hideBtn {
+    display: none;
+  }
+
+  input#botonTabla:checked ~ table{
+    display: table;
+  }
+  input#botonTabla:checked ~ #showBtn{
+    display: none;
+  }
+  input#botonTabla:checked ~#hideBtn {
+    display: block;
+  }
+
+  /*to do*/
+  label[for='botonTabla'] {
+    background: #EFEFEF;
+    cursor: pointer;
+    position: relative;
+    border: 1px solid gray;
+  }
+
+  table{
+    display: none;
+    width:70%
+  }
+
   td, th {
 	  border: 1px solid white;
 	  padding: auto;
 	  width: 150%;
-	}
-	tr:nth-child(even){background-color: #c5df7d;}
+  }
+  
+  tr:nth-child(even){background-color: #c5df7d;}
+  
 	th {
 	  padding-top: auto;
 	  padding-bottom: auto;
@@ -73,7 +114,7 @@
   }
   
   .titulo{
-  font-size: 200%;
+    font-size: 200%;
   }
   .textoItems,.selectItemsLinea,
   .textoLinea,.lineaSel, .textoParada,.selectItemsParada{
@@ -83,20 +124,29 @@
   }
   
   /*tabla*/
-  .tablaHorario{
+  #hideBtn,#showBtn{
+    display: none;
+  }
+
+  .divTablaHorario{
   	width: 20%;
   	display:table;
   	float: right;
   	border-collapse: collapse;
   	text-align:center;
   }
+  
+
 	td, th {
 	  border: 2px solid gray;
 	  padding: 8px;
 	  width: 150%;
-	}
-	tr:nth-child(even){background-color: #c3e2f0;}
-	tr:hover{background-color: #90acb8;}
+  }
+  
+  tr:nth-child(even){background-color: #c3e2f0;}
+  
+  tr:hover{background-color: #90acb8;}
+  
 	th {
 	  padding-top: 12px;
 	  padding-bottom: 12px;
@@ -108,19 +158,20 @@
 	.botonEnviarp2{
 		width: 73%;
 		justify-content:right;
-	}
+  }
+  
 	input[type=submit] {
 	  font-size: 100%;
 	  border-style: ridge;
-	}
+  }
+  
 	select {
 	  width: 100%;
 	  display: inline-block;
 	  box-sizing: border-box;
-	}
+  }
+  
 	input:hover, select:hover {background-color: #90acb8;}
 	
 }
-	
-  }  
-}
+	 
