@@ -50,7 +50,7 @@ public class FicheroTextoEscritura extends Fichero {
 	{
 		for(int i = 0,j = 1; i < lista.size() && j < lista.size(); i = i + 2,j = j + 2)
 		{
-			pw.println("["+lista.get(j)+","+lista.get(i)+"]");
+			pw.println("["+lista.get(i)+","+lista.get(j)+"],");
 		}
 	}
 	
