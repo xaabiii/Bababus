@@ -71,9 +71,7 @@ insert into LineaParadas(Parada_idParada, Linea_idLinea) values("3","3");
 insert into LineaParadas(Parada_idParada, Linea_idLinea) values("4","3");
 insert into LineaParadas(Parada_idParada, Linea_idLinea) values("5","3");
 insert into LineaParadas(Parada_idParada, Linea_idLinea) values("6","3");
-insert into LineaParadas(Parada_idParada, Linea_idLinea) values("7","3");
-insert into LineaParadas(Parada_idParada, Linea_idLinea) values("8","3");
-insert into LineaParadas(Parada_idParada, Linea_idLinea) values("9","3");
+insert into LineaParadas(Parada_idParada, Linea_idLinea) values("10","3");
 
 insert into LineaParadas(Parada_idParada, Linea_idLinea) values("1","2");
 insert into LineaParadas(Parada_idParada, Linea_idLinea) values("2","2");
@@ -81,7 +79,10 @@ insert into LineaParadas(Parada_idParada, Linea_idLinea) values("3","2");
 insert into LineaParadas(Parada_idParada, Linea_idLinea) values("4","2");
 insert into LineaParadas(Parada_idParada, Linea_idLinea) values("5","2");
 insert into LineaParadas(Parada_idParada, Linea_idLinea) values("6","2");
-insert into LineaParadas(Parada_idParada, Linea_idLinea) values("10","2");
+insert into LineaParadas(Parada_idParada, Linea_idLinea) values("7","2");
+insert into LineaParadas(Parada_idParada, Linea_idLinea) values("8","2");
+insert into LineaParadas(Parada_idParada, Linea_idLinea) values("9","2");
+
 
 insert into LineaParadas(Parada_idParada, Linea_idLinea) values("1","4");
 insert into LineaParadas(Parada_idParada, Linea_idLinea) values("2","4");
@@ -129,5 +130,3 @@ insert into LineaHorarios(Horario_idHorario, Linea_idLinea) values("12","4");
 insert into LineaHorarios(Horario_idHorario, Linea_idLinea) values("13","4");
 insert into LineaHorarios(Horario_idHorario, Linea_idLinea) values("14","4");
 insert into LineaHorarios(Horario_idHorario, Linea_idLinea) values("15","4");
-
-
