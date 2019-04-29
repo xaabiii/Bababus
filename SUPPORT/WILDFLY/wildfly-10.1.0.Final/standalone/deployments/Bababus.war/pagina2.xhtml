@@ -33,7 +33,8 @@
 		<h:outputText value="El siguiente bababus llegara en " rendered="#{lineaBean.ver}"/>
 		<h:outputText value="#{lineaBean.calcularTiempo()}" rendered="#{lineaBean.ver}"/>
 		<h:outputText value=" a la parada: " rendered="#{lineaBean.ver}"/>
-		<h:commandButton action="" value="Reservar plaza" /><br />
+		<!--<h:commandButton action="" value="Reservar plaza" />--><br />
+		<h:commandButton action="#{lineaBean.cambiarPagina1m()}" value="Reservar plaza" />
 		
 
 		

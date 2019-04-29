@@ -118,10 +118,16 @@ public class LineaBean implements Serializable{
 		
 		return "home.xhtml";
 	}
+	public String cambiarPagina1m(){
+		//HttpSession sesion=(HttpSession) FacesContext.getCurrentInstance().getExternalContext().getSession(false);//para que deaparezca el texto que hemos
+		//sesion.invalidate();
+		
+		return "MapboxBV.xhtml";
+	}
 	
 	public String cambiarPagina2(){
 		entity.setOrigenDestino(lineas.get(indice1).getOrigenDestino());
-		return "pag2.xhtml";
+		return "pagina2.xhtml";
 	}
 
 	
