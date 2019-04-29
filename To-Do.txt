@@ -1,0 +1,10 @@
+BABABUS:
+-Probar visualización del mapa en el movil
+-Probar/debuggear jugando con el programa (dandole a volver menu principal, volviendo, etc...)
+-Poner getCoordenadas para los 4 autobuses
+-Cambiar tiempo de notificacion
+-Añadir opción gmail
+
+
+DESPLIEGUE:
+-Encontrar una herramienta que saque las métricas/rendimiento de un servidor samba
