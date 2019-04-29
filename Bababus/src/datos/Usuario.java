@@ -14,24 +14,25 @@ public class Usuario implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int idUsuario;
 
-	private boolean reserva;
+	private String email;
+
+	private String reserva;
 
 	private String tiempoAviso;
 
-	//uni-directional many-to-one association to Horario
+	//bi-directional many-to-one association to Horario
 	@ManyToOne
 	@JoinColumn(name="Horario_idHorario")
 	private Horario horario;
 
-	//uni-directional many-to-one association to Linea
+	//bi-directional many-to-one association to Linea
 	@ManyToOne
 	@JoinColumn(name="Linea_idLinea")
 	private Linea linea;
 
-	//uni-directional many-to-one association to Parada
+	//bi-directional many-to-one association to Parada
 	@ManyToOne
 	@JoinColumn(name="Parada_idParadas")
 	private Parada parada;
@@ -47,11 +48,19 @@ public class Usuario implements Serializable {
 		this.idUsuario = idUsuario;
 	}
 
-	public boolean getReserva() {
+	public String getEmail() {
+		return this.email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getReserva() {
 		return this.reserva;
 	}
 
-	public void setReserva(boolean reserva) {
+	public void setReserva(String reserva) {
 		this.reserva = reserva;
 	}
 

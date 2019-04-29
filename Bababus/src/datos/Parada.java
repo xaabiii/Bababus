@@ -2,6 +2,7 @@ package datos;
 
 import java.io.Serializable;
 import javax.persistence.*;
+import java.util.List;
 
 
 /**
@@ -14,12 +15,19 @@ public class Parada implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int idParada;
 
 	private String coordenadas;
 
 	private String nombreParada;
+
+	//bi-directional many-to-one association to LineaParada
+	@OneToMany(mappedBy="parada")
+	private List<LineaParada> lineaParadas;
+
+	//bi-directional many-to-one association to Usuario
+	@OneToMany(mappedBy="parada")
+	private List<Usuario> usuarios;
 
 	public Parada() {
 	}
@@ -46,6 +54,50 @@ public class Parada implements Serializable {
 
 	public void setNombreParada(String nombreParada) {
 		this.nombreParada = nombreParada;
+	}
+
+	public List<LineaParada> getLineaParadas() {
+		return this.lineaParadas;
+	}
+
+	public void setLineaParadas(List<LineaParada> lineaParadas) {
+		this.lineaParadas = lineaParadas;
+	}
+
+	public LineaParada addLineaParada(LineaParada lineaParada) {
+		getLineaParadas().add(lineaParada);
+		lineaParada.setParada(this);
+
+		return lineaParada;
+	}
+
+	public LineaParada removeLineaParada(LineaParada lineaParada) {
+		getLineaParadas().remove(lineaParada);
+		lineaParada.setParada(null);
+
+		return lineaParada;
+	}
+
+	public List<Usuario> getUsuarios() {
+		return this.usuarios;
+	}
+
+	public void setUsuarios(List<Usuario> usuarios) {
+		this.usuarios = usuarios;
+	}
+
+	public Usuario addUsuario(Usuario usuario) {
+		getUsuarios().add(usuario);
+		usuario.setParada(this);
+
+		return usuario;
+	}
+
+	public Usuario removeUsuario(Usuario usuario) {
+		getUsuarios().remove(usuario);
+		usuario.setParada(null);
+
+		return usuario;
 	}
 
 }

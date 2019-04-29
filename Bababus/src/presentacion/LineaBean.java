@@ -35,6 +35,7 @@ public class LineaBean implements Serializable{
 	private int indice2;
 	private final Linea entity=new Linea();
 	private final LineaParada entity2=new LineaParada();
+	private boolean ver = false;
 	
 	@EJB
 	private Servicios negocio;
@@ -80,6 +81,16 @@ public class LineaBean implements Serializable{
 		this.indice2 = indice2;
 		
 	}
+	
+
+	public boolean getVer() {
+		return ver;
+	}
+	
+	public void setVer(boolean ver) {
+		this.ver = ver;
+	}
+	
 
 	//metodos
 	public Linea getEntity() {
@@ -135,12 +146,10 @@ public class LineaBean implements Serializable{
 
 public String calcularTiempo(){
 		
-		ver=true;
+		setVer(true);
 		
 		return negocio.calcularTiempo(entity2.getIdLineaParadas());
 		
 	}
-	
-
 	
 }

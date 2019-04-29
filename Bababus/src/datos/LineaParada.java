@@ -10,26 +10,25 @@ import javax.persistence.*;
  */
 @Entity
 @Table(name="LineaParadas")
-
 @NamedQueries({
 @NamedQuery(name="LineaParada.findAll", query="SELECT l FROM LineaParada l"),
 @NamedQuery(name="LineaParadaIdLinea", query="SELECT l FROM LineaParada l WHERE l.linea.idLinea=:idLinea")
 })
+
 public class LineaParada implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int idLineaParadas;
 
 	private String orden;
 
-	//uni-directional many-to-one association to Linea
+	//bi-directional many-to-one association to Linea
 	@ManyToOne
 	@JoinColumn(name="Linea_idLinea")
 	private Linea linea;
 
-	//uni-directional many-to-one association to Parada
+	//bi-directional many-to-one association to Parada
 	@ManyToOne
 	@JoinColumn(name="Parada_idParada")
 	private Parada parada;

@@ -10,7 +10,6 @@ import javax.persistence.*;
  */
 @Entity
 @Table(name="LineaHorarios")
-
 @NamedQueries({
 @NamedQuery(name="LineaHorario.findAll", query="SELECT l FROM LineaHorario l"),
 @NamedQuery(name="LineaHorarioIdLinea", query="SELECT l FROM LineaHorario l WHERE l.linea.idLinea=:idLinea")
@@ -19,15 +18,14 @@ public class LineaHorario implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int idLineaHorarios;
 
-	//uni-directional many-to-one association to Horario
+	//bi-directional many-to-one association to Horario
 	@ManyToOne
 	@JoinColumn(name="Horario_idHorario")
 	private Horario horario;
 
-	//uni-directional many-to-one association to Linea
+	//bi-directional many-to-one association to Linea
 	@ManyToOne
 	@JoinColumn(name="Linea_idLinea")
 	private Linea linea;
