@@ -2,7 +2,6 @@ package datos;
 
 import java.io.Serializable;
 import javax.persistence.*;
-import java.util.List;
 
 
 /**
@@ -18,15 +17,12 @@ public class Autobus implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int idAutobus;
 
 	private String coordenadas;
 
 	private int plazas;
-
-	//bi-directional many-to-one association to Linea
-	@OneToMany(mappedBy="autobus")
-	private List<Linea> lineas;
 
 	public Autobus() {
 	}
@@ -53,28 +49,6 @@ public class Autobus implements Serializable {
 
 	public void setPlazas(int plazas) {
 		this.plazas = plazas;
-	}
-
-	public List<Linea> getLineas() {
-		return this.lineas;
-	}
-
-	public void setLineas(List<Linea> lineas) {
-		this.lineas = lineas;
-	}
-
-	public Linea addLinea(Linea linea) {
-		getLineas().add(linea);
-		linea.setAutobus(this);
-
-		return linea;
-	}
-
-	public Linea removeLinea(Linea linea) {
-		getLineas().remove(linea);
-		linea.setAutobus(null);
-
-		return linea;
 	}
 
 }

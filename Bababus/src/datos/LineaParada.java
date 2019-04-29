@@ -14,21 +14,21 @@ import javax.persistence.*;
 @NamedQuery(name="LineaParada.findAll", query="SELECT l FROM LineaParada l"),
 @NamedQuery(name="LineaParadaIdLinea", query="SELECT l FROM LineaParada l WHERE l.linea.idLinea=:idLinea")
 })
-
 public class LineaParada implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int idLineaParadas;
 
 	private String orden;
 
-	//bi-directional many-to-one association to Linea
+	//uni-directional many-to-one association to Linea
 	@ManyToOne
 	@JoinColumn(name="Linea_idLinea")
 	private Linea linea;
 
-	//bi-directional many-to-one association to Parada
+	//uni-directional many-to-one association to Parada
 	@ManyToOne
 	@JoinColumn(name="Parada_idParada")
 	private Parada parada;

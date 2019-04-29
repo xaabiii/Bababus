@@ -18,14 +18,15 @@ public class LineaHorario implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int idLineaHorarios;
 
-	//bi-directional many-to-one association to Horario
+	//uni-directional many-to-one association to Horario
 	@ManyToOne
 	@JoinColumn(name="Horario_idHorario")
 	private Horario horario;
 
-	//bi-directional many-to-one association to Linea
+	//uni-directional many-to-one association to Linea
 	@ManyToOne
 	@JoinColumn(name="Linea_idLinea")
 	private Linea linea;

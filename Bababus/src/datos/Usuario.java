@@ -14,6 +14,7 @@ public class Usuario implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int idUsuario;
 
 	private String email;
@@ -22,17 +23,17 @@ public class Usuario implements Serializable {
 
 	private String tiempoAviso;
 
-	//bi-directional many-to-one association to Horario
+	//uni-directional many-to-one association to Horario
 	@ManyToOne
 	@JoinColumn(name="Horario_idHorario")
 	private Horario horario;
 
-	//bi-directional many-to-one association to Linea
+	//uni-directional many-to-one association to Linea
 	@ManyToOne
 	@JoinColumn(name="Linea_idLinea")
 	private Linea linea;
 
-	//bi-directional many-to-one association to Parada
+	//uni-directional many-to-one association to Parada
 	@ManyToOne
 	@JoinColumn(name="Parada_idParadas")
 	private Parada parada;
