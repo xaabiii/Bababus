@@ -6,38 +6,67 @@
 
 <h:head>
 	<title>BABABUS</title>
+	<h:outputStylesheet name="css/style.css"  />
+	<meta name='viewport'
+      content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
 </h:head> 
 <body> 
+	<div class='page'>
 	<h:form>
-		<h1>Bienvenido Babalier</h1>
+		<div class='section titulo'>
+		<h1>Where is my Bus?</h1>
+		</div>
 		
-		<h:outputText value="Linea seleccionada:" />
-		<h:outputText value="#{lineaBean.entity.origenDestino}" />
-		<h:dataTable value="#{lineaBean.getListLineaHorario()}" var="hora" border="1">
+		<div class='section textoLinea'>
+		<p>Línea seleccionada: </p>
+		</div>
+		
+		<div class='section lineaSel'>		
+		<h:outputText value="#{lineaBean.entity.origenDestino}"/>
+		</div>
+		
+		<div class='section divTablaHorario'>
+		<input type='checkbox' id='botonTabla'/>
+		<label id='showBtn' for='botonTabla'>Ver horario</label>
+		<label id='hideBtn' for='botonTabla'>Ocultar horario</label>
+		<h:dataTable value="#{lineaBean.getListLineaHorario()}" var="hora" border="1" id="horario">
 			<h:column>
 				<f:facet name="header">HORARIO</f:facet>
 				<h:outputText value="#{hora.horario.hora}" />
 			</h:column>		
 		</h:dataTable>
+		</div>
+
+		<div class='section textoParada'>
+		<p>Selecciona parada: </p>
+		</div>
 		
-		
-		<h:outputText value="En qué parada se encuentra?" />
+		<div class='section selectItemsParada'>
 		<h:selectOneMenu value="#{lineaBean.indice2}">
 			<f:selectItems value="#{lineaBean.items2}"></f:selectItems>
 		</h:selectOneMenu>
-		<!--  <h:commandButton action="#{lineaBean.getListLineaParada()}" value="Seleccionar" /><br />-->
-		<h:commandButton action="#{lineaBean.cambiarPagina1()}" value="Volver al menú principal" />
+		</div>
+		
+		<div class='section botonEnviarp2'>
+		<h:commandButton action="#{lineaBean.getListLineaParada()}" value="Seleccionar" />
+		</div>
 		
 		
-		<h:commandButton action="#{lineaBean.calcularTiempo()}" value="Seleccionar" /><br />
+		<h:commandButton action="#{lineaBean.calcularTiempo()}" value="No pulsar" /><br />
 		<h:outputText value="El siguiente bababus llegara en " rendered="#{lineaBean.ver}"/>
 		<h:outputText value="#{lineaBean.calcularTiempo()}" rendered="#{lineaBean.ver}"/>
 		<h:outputText value=" a la parada: " rendered="#{lineaBean.ver}"/>
 		<!--<h:commandButton action="" value="Reservar plaza" />--><br />
-		<h:commandButton action="#{lineaBean.cambiarPagina1m()}" value="Reservar plaza" />
 		
+		<h:commandButton action="#{lineaBean.cambiarPagina1m()}" value="ver mapa" />
+		
+		
+		<div class='section botonVolverp2'>
+		<h:commandButton action="#{lineaBean.cambiarPagina1()}" value="Volver" />	
+		</div>
 
 		
 	</h:form>
+	</div>
 </body>  
 </html>

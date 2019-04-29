@@ -47,6 +47,9 @@
   .textoLinea,.lineaSel,.textoParada{
   	font-size: 120%;
   }
+  #botonActualizar,#botonVerMapa{
+  	font-size: 150%;
+  }
 
   /*Tabla*/
   .divTablaHorario {
@@ -77,7 +80,6 @@
     display: block;
   }
 
-  /*to do*/
   label[for='botonTabla'] {
     background: #EFEFEF;
     cursor: pointer;
