@@ -28,7 +28,8 @@ public class Servicios implements Serializable{
 	/**
 	 * 
 	 */
-	private String PATH="/home/gloria/Bababus/Bababus/SarrikoDeustoNuevo.txt";
+	private String PATH="/docencia/cuentas/8/801870/Bababus/Bababus/SarrikoDeustoNuevo.txt";
+	
 	private static final long serialVersionUID = 1L;
 	
 	private int indice=0;
