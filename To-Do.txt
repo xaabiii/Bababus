@@ -1,9 +1,6 @@
-BABABUS:
--Probar visualización del mapa en el movil
+BABABUS
 -Probar/debuggear jugando con el programa (dandole a volver menu principal, volviendo, etc...)
--Poner getCoordenadas para los 4 autobuses
--Cambiar tiempo de notificacion
--Añadir opción gmail
+- EL tiempo de notificacion es en base al autobus actual, independientemente de que se reserve para dentro de 5h. Pra la demo será mejor así?¿?¿?¿
 
 
 DESPLIEGUE:

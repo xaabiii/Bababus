@@ -69,6 +69,8 @@ public class LineaBean implements Serializable{
 	private String email;
 	private boolean entra=false;
 	private int numPlazasMax=80;
+	private String parada;
+	private int id=-5;
 	
 
 
@@ -157,6 +159,7 @@ public class LineaBean implements Serializable{
 	public void setIndice2(int indice2) {
 		this.indice2 = indice2;
 		entity2.setIdLineaParadas(lineaparadas.get(indice2).getIdLineaParadas());
+		//parada=negocio.buscarParadaNombre(lineaparadas.get(indice2).getIdLineaParadas());
 	}
 	
 	public boolean isVer() {
@@ -249,14 +252,24 @@ public class LineaBean implements Serializable{
 		
 		ver=true;
 		
-		String tiempo=negocio.calcularTiempo(entity.getIdLinea(),entity2.getIdLineaParadas());
+		//String tiempo=negocio.calcularTiempo(entity.getIdLinea(),entity2.getIdLineaParadas());
 		//String tiempo=negocio.calcularTiempo(1,1);
 		
 		if(entra == true){
-			
+			if (id == -5){
+				
+				id=entity2.getIdLineaParadas();
+				parada=negocio.buscarParadaNombre(id);
+			}
+			String tiempo=negocio.calcularTiempo(entity.getIdLinea(), id);
 			entra=false;
 			return tiempo;
 		}
+		id=entity2.getIdLineaParadas();
+		parada=negocio.buscarParadaNombre(id);
+		
+		
+		String tiempo=negocio.calcularTiempo(entity.getIdLinea(),entity2.getIdLineaParadas());
 		
 		if(tiempo.equals("xxx")){
 			
@@ -308,8 +321,9 @@ public class LineaBean implements Serializable{
 		
 		entity.setOrigenDestino(negocio.buscarLineaNombre(entity.getIdLinea()));
 		
-		
 		entra=true;
+		String tiempoRestante=calcularTiempo();
+		//entra=true;
 		
 		
 		String body="Se ha completado la reserva de plaza en el bababús " + entity.getOrigenDestino() + " correctamente."
@@ -317,16 +331,17 @@ public class LineaBean implements Serializable{
 						+ ""
 						+ "\nSituación actual:"
 						+ "\n-Linea: " + entity.getOrigenDestino() + ""
-						+ "\n-Hora de salida: " + negocio.buscarHorarioNombre(entity3.getIdLineaHorarios()) + ""//solo podremos reservar el bus actual
+						+ "\n-Hora de salida: " + negocio.buscarHorarioNombre(entity3.getIdLineaHorarios()) + ""
 						+ "\n-Plazas libres: " + String.valueOf(numPlazasMax - negocio.numPlazas(entity.getIdLinea(), negocio.buscarHorarioId(entity3.getIdLineaHorarios()))) +""
-						+ "\n-Parada: " + negocio.buscarParadaNombre(entity2.getIdLineaParadas()) + ""
-						+ "\n-Tiempo restante para la llegada (h:min): " + calcularTiempo() +""
+						//+ "\n-Parada: " + negocio.buscarParadaNombre(entity2.getIdLineaParadas()) + ""
+						+ "\n-Parada: " + parada + ""
+						+ "\n-Tiempo restante para la llegada (h:min): " + tiempoRestante +""
 						+ "\n-Incidencias: " + mensajeIncidencias() +""
 						+ "\n\n\n\nAtentamente,\n\nBababús corporation";
 		String subject="Reserva correcta: " + String.valueOf(negocio.numReserva());		
 		
 		send_email(body, subject, email);
-		notificar(tiempoAviso);
+		notificar(tiempoAviso, tiempoRestante);
 		
 	}
 	
@@ -349,14 +364,27 @@ public class LineaBean implements Serializable{
 			}
 		}
 		
+		if(mensaje.equals("xxx")){
+			
+			mensaje="ERROR: el de tiempo de aviso debe ser mayor que el tiempo de llegada del bababús";
+		}
+		
 		return mensaje;
 	}
 	
 
 	
-	public void notificar(int tiempo){
+	public void notificar(int tiempoAntes, String tiempoRestante){
 		
-		long restante= tiempo*60*1000;
+		
+		String[] tiempos=tiempoRestante.split(":");
+		int horas= Integer.valueOf(tiempos[0]);
+		int minutos= Integer.valueOf(tiempos[1]);
+		
+		long tiempo=((horas*60)+minutos)*60*1000;
+		
+
+		long restante= tiempo - (tiempoAntes*60*1000);
 		String subject = "CORRE!";
 		String body="corre que pierdes el bababús";
 		long t1= System.currentTimeMillis();
