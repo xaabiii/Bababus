@@ -26,15 +26,19 @@
 			<f:selectItems value="#{lineaBean.items2}"></f:selectItems>
 		</h:selectOneMenu>
 		<!--  <h:commandButton action="#{lineaBean.getListLineaParada()}" value="Seleccionar" /><br />-->
+		
+		
+		
+		<h:commandButton action="#{lineaBean.calcularTiempo()}" value="Seleccionar" />
+		<br />
+		<h:outputText value="#{lineaBean.calcularTiempo()}" rendered="#{lineaBean.ver}"/>
+		<br />
+		<h:commandButton action="#{lineaBean.cambiarPagina3()}" value="Reservar plaza" />
+		<br />
+		<h:commandButton action="#{lineaBean.verMapa()}" value="Ver Mapa" />
+		<br />
 		<h:commandButton action="#{lineaBean.cambiarPagina1()}" value="Volver al menú principal" />
 		
-		
-		<h:commandButton action="#{lineaBean.calcularTiempo()}" value="Seleccionar" /><br />
-		<h:outputText value="El siguiente bababus llegara en " rendered="#{lineaBean.ver}"/>
-		<h:outputText value="#{lineaBean.calcularTiempo()}" rendered="#{lineaBean.ver}"/>
-		<h:outputText value=" a la parada: " rendered="#{lineaBean.ver}"/>
-		<!--<h:commandButton action="" value="Reservar plaza" />--><br />
-		<h:commandButton action="#{lineaBean.cambiarPagina1m()}" value="ver mapa" />
 		
 
 		
