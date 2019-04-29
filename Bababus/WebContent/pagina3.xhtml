@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+
+<h:head>
+	<title>BABABUS</title>
+</h:head> 
+<body> 
+	<h:form>
+		<h1>Bienvenido Babalier</h1>
+		
+
+		<h:outputText value="¿Con cuántos minutos de antelación desea que le avise?" />
+		<h:inputText value="#{lineaBean.tiempoAviso}" />
+		
+		
+		<h:outputText value="Qué horario desea?" />
+		<h:selectOneMenu value="#{lineaBean.indice3}">
+			<f:selectItems value="#{lineaBean.items3}"></f:selectItems>
+		</h:selectOneMenu>
+		<h:outputText value="¿Cuál es tu coreo electrónico?" />
+		<h:inputText value="#{lineaBean.email}" />
+		<h:commandButton action="#{lineaBean.anadirUsuario()}" value="Reservar" /><br />
+		<h:commandButton action="#{lineaBean.cambiarPagina1()}" value="Volver al menú principal" />
+		
+
+		
+	</h:form>
+</body> 
+</html>

@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.Serializable;
 import java.util.List;
+import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 import javax.ejb.LocalBean;
@@ -101,6 +102,13 @@ public class Servicios implements Serializable{
 		lh = em.find(LineaHorario.class, id);
 		
 		return lh.getHorario().getHora();
+	}
+	public int buscarHorarioId(int id){
+		
+		LineaHorario lh =new LineaHorario();
+		lh = em.find(LineaHorario.class, id);
+		
+		return lh.getHorario().getIdHorario();
 	}
 	
 	public String calcularTiempo(int idLinea, int id){
@@ -199,7 +207,7 @@ public class Servicios implements Serializable{
 		
 	}
 	
-	public void anadirUsuarioDB (int idLineaParada, int idLineaHorario, String TiempoAviso){
+	public void anadirUsuarioDB (int idLineaParada, int idLineaHorario, String TiempoAviso, String email){
 		
 		LineaHorario lh= new LineaHorario();
 		lh = em.find(LineaHorario.class, idLineaHorario);
@@ -210,7 +218,17 @@ public class Servicios implements Serializable{
 		u.setLinea(lh.getLinea());
 		u.setHorario(lh.getHorario());
 		u.setParada(lp.getParada());
-		//u.setReserva(true);
+		
+		Random rand = new Random();
+		if (rand.nextInt(100) < 5){
+			u.setReserva("true");
+		}
+		else{
+			u.setReserva("false");
+		}
+		
+		
+		u.setEmail(email);
 		u.setTiempoAviso(TiempoAviso);
 		em.persist(u);
 		
@@ -219,6 +237,39 @@ public class Servicios implements Serializable{
 		a=em.find(Autobus.class, lh.getLinea().getAutobus().getIdAutobus());
 		a.setPlazas(a.getPlazas()-1);
 		em.persist(a);
+		
+		
+		
+
+		
+		
+	}
+	
+	@SuppressWarnings("unchecked")
+	public int numReserva(){
+		
+		List<Usuario> usuarios = (List<Usuario>) em.createNamedQuery("Usuario.findAll").getResultList();
+		
+		return usuarios.size();
+		
+	}
+	@SuppressWarnings("unchecked")
+	public int numPlazas(int idLinea, int idHorario){
+		
+		List<Usuario> usuarios = (List<Usuario>) em.createNamedQuery("UsuarioIdLineaIdHorario").setParameter("idLinea", idLinea).setParameter("idHorario", idHorario ).getResultList();
+		
+		
+		return usuarios.size();
+		
+	}
+	@SuppressWarnings("unchecked")
+	public List<Usuario> getListUsuarioLineaHorario(int idLinea, int idHorario){
+		
+		List<Usuario> usuarios = (List<Usuario>) em.createNamedQuery("UsuarioIdLineaIdHorario").setParameter("idLinea", idLinea).setParameter("idHorario", idHorario ).getResultList();
+		
+		
+		return usuarios;
+		
 	}
 	
 	

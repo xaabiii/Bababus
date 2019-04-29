@@ -24,6 +24,7 @@ import datos.Linea;
 import datos.LineaHorario;
 import datos.LineaParada;
 import datos.Parada;
+import datos.Usuario;
 import negocio.Servicios;
 
 
@@ -65,8 +66,12 @@ public class LineaBean implements Serializable{
 	private final LineaHorario entity3=new LineaHorario();
 	private boolean ver= false;
 	private int tiempoAviso;
+	private String email;
+	private boolean entra=false;
+	private int numPlazasMax=80;
 	
-	
+
+
 	@EJB
 	private Servicios negocio;
 	
@@ -167,6 +172,15 @@ public class LineaBean implements Serializable{
 	public Linea getEntity() {
 		return entity;
 	}
+	
+	
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
 
 	public List<LineaHorario> getListLineaHorario(){
 		
@@ -238,6 +252,12 @@ public class LineaBean implements Serializable{
 		String tiempo=negocio.calcularTiempo(entity.getIdLinea(),entity2.getIdLineaParadas());
 		//String tiempo=negocio.calcularTiempo(1,1);
 		
+		if(entra == true){
+			
+			entra=false;
+			return tiempo;
+		}
+		
 		if(tiempo.equals("xxx")){
 			
 			tiempo="El bababús ya ha pasado por la parada "  + negocio.buscarParadaNombre(entity2.getIdLineaParadas());
@@ -283,30 +303,53 @@ public class LineaBean implements Serializable{
 	
 	public void anadirUsuario(){
 		
-		
-		negocio.anadirUsuarioDB(entity2.getIdLineaParadas(), entity3.getIdLineaHorarios(), String.valueOf(tiempoAviso));
+		email="prueba77sarenet@gmail.com";
+		negocio.anadirUsuarioDB(entity2.getIdLineaParadas(), entity3.getIdLineaHorarios(), String.valueOf(tiempoAviso), email);
 		
 		entity.setOrigenDestino(negocio.buscarLineaNombre(entity.getIdLinea()));
 		
 		
-		
+		entra=true;
 		
 		
 		String body="Se ha completado la reserva de plaza en el bababús " + entity.getOrigenDestino() + " correctamente."
 				+ "\nLe avisaremos " + tiempoAviso + " minutos antes de su llegada."
 						+ ""
-						+ "\nSituacion actual:"
+						+ "\nSituación actual:"
 						+ "\n-Linea: " + entity.getOrigenDestino() + ""
 						+ "\n-Hora de salida: " + negocio.buscarHorarioNombre(entity3.getIdLineaHorarios()) + ""//solo podremos reservar el bus actual
-						+ "\n-Plazas libres: 32" + ""
+						+ "\n-Plazas libres: " + String.valueOf(numPlazasMax - negocio.numPlazas(entity.getIdLinea(), negocio.buscarHorarioId(entity3.getIdLineaHorarios()))) +""
 						+ "\n-Parada: " + negocio.buscarParadaNombre(entity2.getIdLineaParadas()) + ""
-						+ "\n-Tiempo restante para la llegada: " + calcularTiempo() +""
+						+ "\n-Tiempo restante para la llegada (h:min): " + calcularTiempo() +""
+						+ "\n-Incidencias: " + mensajeIncidencias() +""
 						+ "\n\n\n\nAtentamente,\n\nBababús corporation";
-		String subject="Reserva correcta: 87392837";		
+		String subject="Reserva correcta: " + String.valueOf(negocio.numReserva());		
 		
-		send_email(body, subject);
+		send_email(body, subject, email);
 		notificar(tiempoAviso);
 		
+	}
+	
+	public String mensajeIncidencias(){
+		
+		String mensaje ="xxx";
+		List<Usuario> usuarios = negocio.getListUsuarioLineaHorario(entity.getIdLinea(), negocio.buscarHorarioId(entity3.getIdLineaHorarios()));
+		
+		for (Usuario u : usuarios){
+			
+			if (u.getReserva().equals("true")){
+				
+				mensaje = "Posible retención, puede que el bababús se retrase";
+				
+				return mensaje;
+			}
+			else{
+				
+				mensaje = "No";
+			}
+		}
+		
+		return mensaje;
 	}
 	
 
@@ -323,7 +366,7 @@ public class LineaBean implements Serializable{
 		while (salir == false){
 			
 			if (t2-t1 > restante){
-				send_email(body, subject);
+				send_email(body, subject, email);
 				salir=true;
 			}
 			else{
@@ -336,12 +379,12 @@ public class LineaBean implements Serializable{
 	}
 	
 
-	 public static void send_email(String body, String subject){  //String toEmail, 
+	 public static void send_email(String body, String subject, String toEmail){  //String toEmail, 
 		//authentication info
 			final String username = "prueba77sarenet@gmail.com";
 			final String password = "Ejemplo11";
 			String fromEmail = "prueba77sarenet@gmail.com";
-			String toEmail = "prueba77sarenet@gmail.com";
+			//String toEmail = "prueba77sarenet@gmail.com";
 			
 			Properties properties = new Properties();
 			properties.put("mail.smtp.auth", "true");
