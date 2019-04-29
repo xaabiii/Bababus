@@ -1,0 +1,25 @@
+QUERIES
+
+@NamedQueries({
+	@NamedQuery(name="Autobus.findAll", query="SELECT a FROM Autobus a"),
+	@NamedQuery(name="Autobus.findAuto", query="SELECT a FROM Autobus a WHERE a.idAutobus=:idAutobus")
+})
+
+
+
+
+@NamedQueries({
+@NamedQuery(name="Horario.findAll", query="SELECT h FROM Horario h"),
+@NamedQuery(name="HorarioLinea", query= "SELECT h FROM Horario h" )
+})
+
+@NamedQueries({
+@NamedQuery(name="LineaHorario.findAll", query="SELECT l FROM LineaHorario l"),
+@NamedQuery(name="LineaHorarioIdLinea", query="SELECT l FROM LineaHorario l WHERE l.linea.idLinea=:idLinea")
+})
+
+@NamedQueries({
+@NamedQuery(name="LineaParada.findAll", query="SELECT l FROM LineaParada l"),
+@NamedQuery(name="LineaParadaIdLinea", query="SELECT l FROM LineaParada l WHERE l.linea.idLinea=:idLinea")
+})
+
