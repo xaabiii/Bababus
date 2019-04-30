@@ -37,10 +37,10 @@ public class Servicios implements Serializable{
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	private String PATHBV= "/users/809642/Bababus/Bababus/BilbaoVitoria.txt";
-	private String PATHVB= "/users/809642/Bababus/Bababus/VitoriaBilbao.txt";
-	private String PATHVL= "/users/809642/Bababus/Bababus/VitoriaLeioa.txt";
-	private String PATHLV= "/users/809642/Bababus/Bababus/LeioaVitoria.txt";
+	private String PATHBV= "/home/danel/Escritorio/ficheros/BilbaoVitoria.txt";
+	private String PATHVB= "/home/danel/Escritorio/ficheros/VitoriaBilbao.txt";
+	private String PATHVL= "/home/danel/Escritorio/ficheros/VitoriaLeioa.txt";
+	private String PATHLV= "/home/danel/Escritorio/ficheros/LeioaVitoria.txt";
 	private int indice=0;
 	@PersistenceContext
 	private EntityManager em;
@@ -141,7 +141,7 @@ public class Servicios implements Serializable{
 		System.out.println("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
 		System.out.println(id);
 		
-		String tiempo="xxx";
+		String tiempo="xxx1";
 		int horas=0;
 		int minutos=0;
 		int segundos=0;
@@ -187,7 +187,12 @@ public class Servicios implements Serializable{
 				    	horas=segundos / 3600;
 				    	minutos = (segundos % 3600) / 60;
 				    	tiempo = String.format("%02d:%02d", horas, minutos);
-		    	}
+				    	
+			    	}
+			    	else{
+			    		
+			    		tiempo="xxx";
+			    	}
 		    	
 
 		    	}

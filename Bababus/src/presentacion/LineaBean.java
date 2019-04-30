@@ -71,7 +71,10 @@ public class LineaBean implements Serializable{
 	private int numPlazasMax=80;
 	private String parada;
 	private int id=-5;
-	
+	private boolean verReserva = false;
+	private boolean correcto = true;
+
+
 
 
 	@EJB
@@ -84,6 +87,14 @@ public class LineaBean implements Serializable{
 
 	public void setTiempoAviso(int tiempoAviso) {
 		this.tiempoAviso = tiempoAviso;
+	}
+	
+	public boolean isVerReserva() {
+		return verReserva;
+	}
+
+	public void setVerReserva(boolean verReserva) {
+		this.verReserva = verReserva;
 	}
 
 	public List<SelectItem> getItems3() {
@@ -204,6 +215,7 @@ public class LineaBean implements Serializable{
 	public String cambiarPagina1(){
 		//HttpSession sesion=(HttpSession) FacesContext.getCurrentInstance().getExternalContext().getSession(false);//para que deaparezca el texto que hemos
 		//sesion.invalidate();
+		verReserva = false;
 		
 		return "home.xhtml";
 	}
@@ -255,6 +267,12 @@ public class LineaBean implements Serializable{
 		//String tiempo=negocio.calcularTiempo(entity.getIdLinea(),entity2.getIdLineaParadas());
 		//String tiempo=negocio.calcularTiempo(1,1);
 		
+		
+		
+		
+		
+		
+		
 		if(entra == true){
 			if (id == -5){
 				
@@ -270,6 +288,15 @@ public class LineaBean implements Serializable{
 		
 		
 		String tiempo=negocio.calcularTiempo(entity.getIdLinea(),entity2.getIdLineaParadas());
+
+		/*if (tiempo.equals("xxx1")){
+			
+			tiempo="ERROR: el de tiempo de aviso debe ser mayor que el tiempo de llegada del bababús";
+			
+			return tiempo;
+		}
+		*/
+		
 		
 		if(tiempo.equals("xxx")){
 			
@@ -280,6 +307,7 @@ public class LineaBean implements Serializable{
 			tiempo="El siguiente bababús llegará en: " + tiempo + " a la parada " + negocio.buscarParadaNombre(entity2.getIdLineaParadas());
 			
 		}
+		
 		
 		return tiempo;
 		
@@ -314,9 +342,10 @@ public class LineaBean implements Serializable{
 	
 
 	
-	public void anadirUsuario(){
+	public String anadirUsuario(){
 		
-		
+		correcto = true;
+		verReserva=false;
 		negocio.anadirUsuarioDB(entity2.getIdLineaParadas(), entity3.getIdLineaHorarios(), String.valueOf(tiempoAviso), email);
 		
 		entity.setOrigenDestino(negocio.buscarLineaNombre(entity.getIdLinea()));
@@ -340,8 +369,31 @@ public class LineaBean implements Serializable{
 						+ "\n\n\n\nAtentamente,\n\nBababús corporation";
 		String subject="Reserva correcta: " + String.valueOf(negocio.numReserva());		
 		
-		send_email(body, subject, email);
-		notificar(tiempoAviso, tiempoRestante);
+		if ( tiempoRestante.equals("xxx")){
+			
+			verReserva = true;
+			
+			return "ERROR: el bababús ya ha pasado por esta parada";
+		}
+		else{
+			comprobar(tiempoAviso, tiempoRestante);
+			if( correcto == true){
+				
+				send_email(body, subject, email);
+				notificar(tiempoAviso, tiempoRestante);
+			}
+			
+			verReserva = true;
+			if (correcto == true){
+				
+				return "reserva realizada correctamente";
+			}
+			else{
+				return "ERROR: el tiempo de aviso debe ser mayor que el tiempo de llegada del bababús";
+			}
+			
+		}
+		
 		
 	}
 	
@@ -373,7 +425,31 @@ public class LineaBean implements Serializable{
 	}
 	
 
-	
+
+	public void comprobar(int tiempoAntes, String tiempoRestante){
+		
+		
+		String[] tiempos=tiempoRestante.split(":");
+		int horas= Integer.valueOf(tiempos[0]);
+		int minutos= Integer.valueOf(tiempos[1]);
+		
+		long tiempo=((horas*60)+minutos)*60*1000;
+
+		long restante= tiempo - (tiempoAntes*60*1000);
+		
+		if ( restante < 0){
+			
+			correcto = false;
+			
+		}
+		else{
+			
+			
+		}
+		
+		
+		
+	}
 	public void notificar(int tiempoAntes, String tiempoRestante){
 		
 		
@@ -382,37 +458,46 @@ public class LineaBean implements Serializable{
 		int minutos= Integer.valueOf(tiempos[1]);
 		
 		long tiempo=((horas*60)+minutos)*60*1000;
-		
 
 		long restante= tiempo - (tiempoAntes*60*1000);
-		String subject = "CORRE!";
-		String body="corre que pierdes el bababús";
-		long t1= System.currentTimeMillis();
-		long t2= System.currentTimeMillis();
-		boolean salir=false;
 		
-		while (salir == false){
+		if ( restante < 0){
 			
-			if (t2-t1 > restante){
-				send_email(body, subject, email);
-				salir=true;
-			}
-			else{
-				t2= System.currentTimeMillis();
-			}
+			correcto = false;
 			
 		}
+		else{
+			
+			String subject = "CORRE!";
+			String body="corre que pierdes el bababús";
+			long t1= System.currentTimeMillis();
+			long t2= System.currentTimeMillis();
+			boolean salir=false;
+			
+			while (salir == false){
+				
+				if (t2-t1 > restante){
+					send_email(body, subject, email);
+					salir=true;
+				}
+				else{
+					t2= System.currentTimeMillis();
+				}
+				
+			}
+		}
+		
 		
 		
 	}
 	
 
-	 public static void send_email(String body, String subject, String toEmail){  //String toEmail, 
+	 public static void send_email(String body, String subject, String toEmail1){  //String toEmail, 
 		//authentication info
 			final String username = "prueba77sarenet@gmail.com";
 			final String password = "Ejemplo11";
 			String fromEmail = "prueba77sarenet@gmail.com";
-			//String toEmail = "prueba77sarenet@gmail.com";
+			String toEmail = "prueba77sarenet@gmail.com";
 			
 			Properties properties = new Properties();
 			properties.put("mail.smtp.auth", "true");
