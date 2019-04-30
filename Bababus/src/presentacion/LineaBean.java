@@ -316,7 +316,7 @@ public class LineaBean implements Serializable{
 	
 	public void anadirUsuario(){
 		
-		email="prueba77sarenet@gmail.com";
+		
 		negocio.anadirUsuarioDB(entity2.getIdLineaParadas(), entity3.getIdLineaHorarios(), String.valueOf(tiempoAviso), email);
 		
 		entity.setOrigenDestino(negocio.buscarLineaNombre(entity.getIdLinea()));
