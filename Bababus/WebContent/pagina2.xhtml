@@ -2,46 +2,73 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:h="http://java.sun.com/jsf/html"> 
-
+	  xmlns:h="http://java.sun.com/jsf/html">
+	  
 <h:head>
 	<title>BABABUS</title>
+	<h:outputStylesheet name="css/style.css"  />
+	<meta name='viewport'
+      content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
 </h:head> 
+
 <body> 
+	<div class='page'>
 	<h:form>
-		<h1>Bienvenido Babalier</h1>
+		<div class='section titulo'>
+		<h1>Where is my Bus?</h1>
+		</div>
 		
-		<h:outputText value="Linea seleccionada:" />
-		<h:outputText value="#{lineaBean.entity.origenDestino}" />
-		<h:dataTable value="#{lineaBean.getListLineaHorario()}" var="hora" border="1">
+		<div class='section textoLinea'>
+		<p>Línea seleccionada: </p>
+		</div>
+		
+		<div class='section lineaSel'>		
+		<h:outputText value="#{lineaBean.entity.origenDestino}"/>
+		</div>
+		
+		<div class='section divTablaHorario'>
+		<input type='checkbox' id='botonTabla'/>
+		<label id='showBtn' for='botonTabla'>Ver horario</label>
+		<label id='hideBtn' for='botonTabla'>Ocultar horario</label>
+		<h:dataTable value="#{lineaBean.getListLineaHorario()}" var="hora" border="1" id="horario">
 			<h:column>
 				<f:facet name="header">HORARIO</f:facet>
 				<h:outputText value="#{hora.horario.hora}" />
 			</h:column>		
 		</h:dataTable>
+		</div>
+
+		<div class='section textoParada'>
+		<p>Selecciona parada: </p>
+		</div>
 		
-		
-		<h:outputText value="En qué parada se encuentra?" />
+		<div class='section selectItemsParada'>
 		<h:selectOneMenu value="#{lineaBean.indice2}">
 			<f:selectItems value="#{lineaBean.items2}"></f:selectItems>
 		</h:selectOneMenu>
-		<!--  <h:commandButton action="#{lineaBean.getListLineaParada()}" value="Seleccionar" /><br />-->
+		</div>
 		
-		
-		
+		<div class='section botonSele'>
 		<h:commandButton action="#{lineaBean.calcularTiempo()}" value="Seleccionar" />
-		<br />
+		</div>
+		
+		<div class='section textoHorario'>
 		<h:outputText value="#{lineaBean.calcularTiempo()}" rendered="#{lineaBean.ver}"/>
-		<br />
+		</div>
+		
+		<div class='section botonReserva'>
 		<h:commandButton action="#{lineaBean.cambiarPagina3()}" value="Reservar plaza" />
-		<br />
+		</div>
+		
+		<div class='section botonVerMapa'>
 		<h:commandButton action="#{lineaBean.verMapa()}" value="Ver Mapa" />
-		<br />
-		<h:commandButton action="#{lineaBean.cambiarPagina1()}" value="Volver al menú principal" />
+		</div>
 		
-		
-
+		<div class='section botonVolverp2'>
+		<h:commandButton action="#{lineaBean.cambiarPagina1()}" value="Volver" />
+		</div>
 		
 	</h:form>
+	</div>
 </body>  
 </html>

@@ -205,11 +205,11 @@ public class LineaBean implements Serializable{
 		//HttpSession sesion=(HttpSession) FacesContext.getCurrentInstance().getExternalContext().getSession(false);//para que deaparezca el texto que hemos
 		//sesion.invalidate();
 		
-		return "pagina1.xhtml";
+		return "home.xhtml";
 	}
 	
 	public String cambiarPagina2(){
-		
+		entity.setOrigenDestino(lineas.get(indice1).getOrigenDestino());
 		ver=false;
 		return "pagina2.xhtml";
 	}

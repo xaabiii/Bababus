@@ -6,6 +6,7 @@
 
 <h:head>
 <title>Seguimiento</title>
+<h:outputStylesheet name="css/style.css" />
 <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.1/mapbox-gl.js'></script>
 <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.1/mapbox-gl.css' rel='stylesheet' />	
 <div id='map'></div>  
@@ -2305,12 +2306,14 @@
 
 
 <h:body>
+<div class='page'>
 <h:form id="formname">
-	<h:commandButton action="#{temporizadorMB.preparaCoordenada()}" value="Actualiza" />
+	<h:commandButton action="#{temporizadorMB.preparaCoordenada4()}" value="Actualiza" />
 	<h:inputHidden id="lati" value="#{temporizadorMB.latitud}" />
 	<h:inputHidden id="longi" value="#{temporizadorMB.longitud}" />
 	<h:commandButton value="Ver Mapa" onclick="onCall(this.form); return false;"/>
 	<h:commandButton action="#{lineaBean.cambiarPagina1()}" value="Volver menu principal"/>
 </h:form>
+</div>
 </h:body>	
 </html>
