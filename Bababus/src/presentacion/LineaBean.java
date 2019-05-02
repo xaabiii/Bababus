@@ -73,7 +73,7 @@ public class LineaBean implements Serializable{
 	private int id=-5;
 	private boolean verReserva = false;
 	private boolean correcto = true;
-
+	private boolean verParada=false;
 
 
 
@@ -81,6 +81,14 @@ public class LineaBean implements Serializable{
 	private Servicios negocio;
 	
 	
+	
+	public boolean isVerParada() {
+		return verParada;
+	}
+
+	public void setVerParada(boolean verParada) {
+		this.verParada = verParada;
+	}
 	public int getTiempoAviso() {
 		return tiempoAviso;
 	}
@@ -216,6 +224,8 @@ public class LineaBean implements Serializable{
 		//HttpSession sesion=(HttpSession) FacesContext.getCurrentInstance().getExternalContext().getSession(false);//para que deaparezca el texto que hemos
 		//sesion.invalidate();
 		verReserva = false;
+		verParada=false;
+		//ver=false;
 		
 		return "home.xhtml";
 	}
@@ -259,20 +269,25 @@ public class LineaBean implements Serializable{
 		
 	}
 	
+	public String solicitaParada() {
+		
+		ver=false;
+		verParada=true;
+		
+		
+		return "El bababús se parará en " + negocio.buscarParadaNombre(entity2.getIdLineaParadas());
+	}
+	
 	
 	public String calcularTiempo(){
 		
+		verParada=false;
 		ver=true;
 		
 		//String tiempo=negocio.calcularTiempo(entity.getIdLinea(),entity2.getIdLineaParadas());
 		//String tiempo=negocio.calcularTiempo(1,1);
 		
-		
-		
-		
-		
-		
-		
+
 		if(entra == true){
 			if (id == -5){
 				
@@ -494,10 +509,10 @@ public class LineaBean implements Serializable{
 
 	 public static void send_email(String body, String subject, String toEmail1){  //String toEmail, 
 		//authentication info
-			final String username = "prueba77sarenet@gmail.com";
-			final String password = "Ejemplo11";
-			String fromEmail = "prueba77sarenet@gmail.com";
-			String toEmail = "prueba77sarenet@gmail.com";
+			final String username = "babcorreo@gmail.com";
+			final String password = "babapassword";
+			String fromEmail = "babcorreo@gmail.com";
+			String toEmail = "babcorreo@gmail.com";
 			
 			Properties properties = new Properties();
 			properties.put("mail.smtp.auth", "true");

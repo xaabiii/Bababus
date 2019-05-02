@@ -39,7 +39,7 @@
 		</div>
 
 		<div class='section textoParada'>
-		<p>Selecciona parada: </p>
+		<p>Seleccione parada: </p>
 		</div>
 		
 		<div class='section selectItemsParada'>
@@ -49,11 +49,19 @@
 		</div>
 		
 		<div class='section botonSele'>
-		<h:commandButton action="#{lineaBean.calcularTiempo()}" value="Seleccionar" />
+		<h:commandButton action="#{lineaBean.calcularTiempo()}" value="Ver tiempo de llegada" />
 		</div>
 		
 		<div class='section textoHorario'>
 		<h:outputText value="#{lineaBean.calcularTiempo()}" rendered="#{lineaBean.ver}"/>
+		</div>
+		
+		<div class='section botonPara'>
+		<h:commandButton action="#{lineaBean.solicitaParada()}" value="Solicitar parada" />
+		</div>
+		
+		<div class='section textoParada'>
+		<h:outputText value="#{lineaBean.solicitaParada()}" rendered="#{lineaBean.verParada}"/>
 		</div>
 		
 		<div class='section botonReserva'>
