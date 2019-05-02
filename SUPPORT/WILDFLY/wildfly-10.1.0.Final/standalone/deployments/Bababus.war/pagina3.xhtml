@@ -48,8 +48,12 @@
 		<h:commandButton action="#{lineaBean.anadirUsuario()}" value="Reservar" />
 		</div>
 		
+		<div class='section textoReserva'>
+		<h:outputText value="#{lineaBean.anadirUsuario()}" rendered="#{lineaBean.verReserva}"/>
+		</div>
+		
 		<div class='section botonVolverp2'>
-		<h:commandButton action="#{lineaBean.cambiarPagina1()}" value="Volver" />
+		<h:commandButton action="#{lineaBean.cambiarPagina2()}" value="Volver" />
 		</div>
 
 		
