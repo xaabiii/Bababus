@@ -233,6 +233,7 @@ public class LineaBean implements Serializable{
 	public String cambiarPagina2(){
 		entity.setOrigenDestino(lineas.get(indice1).getOrigenDestino());
 		ver=false;
+		verReserva=false;
 		return "pagina2.xhtml";
 	}
 	public String cambiarPagina3(){
@@ -361,7 +362,7 @@ public class LineaBean implements Serializable{
 		
 		correcto = true;
 		verReserva=false;
-		negocio.anadirUsuarioDB(entity2.getIdLineaParadas(), entity3.getIdLineaHorarios(), String.valueOf(tiempoAviso), email);
+		//negocio.anadirUsuarioDB(entity2.getIdLineaParadas(), entity3.getIdLineaHorarios(), String.valueOf(tiempoAviso), email);
 		
 		entity.setOrigenDestino(negocio.buscarLineaNombre(entity.getIdLinea()));
 		
@@ -393,9 +394,11 @@ public class LineaBean implements Serializable{
 		else{
 			comprobar(tiempoAviso, tiempoRestante);
 			if( correcto == true){
-				
+				negocio.anadirUsuarioDB(entity2.getIdLineaParadas(), entity3.getIdLineaHorarios(), String.valueOf(tiempoAviso), email);
 				send_email(body, subject, email);
 				notificar(tiempoAviso, tiempoRestante);
+				
+				return "reserva realizada correctamente";
 			}
 			
 			verReserva = true;
@@ -404,7 +407,7 @@ public class LineaBean implements Serializable{
 				return "reserva realizada correctamente";
 			}
 			else{
-				return "ERROR: el tiempo de aviso debe ser mayor que el tiempo de llegada del bababús";
+				return "ERROR: el tiempo de aviso debe ser menor que el tiempo de llegada del bababús";
 			}
 			
 		}

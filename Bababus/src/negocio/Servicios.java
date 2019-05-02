@@ -37,10 +37,10 @@ public class Servicios implements Serializable{
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	private String PATHBV= "/users/818781/Desktop/github/Bababus/ficheros1/BilbaoVitoria.txt";
-	private String PATHVB= "/users/818781/Desktop/github/Bababus/ficheros1/VitoriaBilbao.txt";
-	private String PATHVL= "/users/818781/Desktop/github/Bababus/ficheros1/VitoriaLeioa.txt";
-	private String PATHLV= "/users/818781/Desktop/github/Bababus/ficheros1/LeioaVitoria.txt";
+	private String PATHBV= "/home/danel/Escritorio/ficheros/BilbaoVitoria.txt";
+	private String PATHVB= "/home/danel/Escritorio/ficheros/VitoriaBilbao.txt";
+	private String PATHVL= "/home/danel/Escritorio/ficheros/VitoriaLeioa.txt";
+	private String PATHLV= "/home/danel/Escritorio/ficheros/LeioaVitoria.txt";
 	private int indice=0;
 	@PersistenceContext
 	private EntityManager em;
