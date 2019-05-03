@@ -9,6 +9,7 @@
 	<h:outputStylesheet name="css/style.css"  />
 	<meta name='viewport'
       content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
+      
 </h:head> 
  
 <body> 
@@ -19,17 +20,17 @@
 		</div>
 		
 		<div class='section textoAntelacion'>
-		<p>Introduce antelación para aviso(min):</p>
+		<p>¿Cuánto tiempo antes quiere que le avisemos? (min):</p>
 		</div>
 		
 		<div class="section inputAntelacion">
 		<h:inputText value="#{lineaBean.tiempoAviso}" requiredMessage="ERROR!Es necesario que se rellene este campo" validatorMessage="ERROR!El campo rellenado debe de ser un número" >
 			<f:validateLongRange minimum="0" maximum="255"></f:validateLongRange>
 		</h:inputText>
-		
 		</div>
+		
 		<div class='section textoSelHorario'>
-		<p>Seleciona horario:</p>
+		<p>Seleccione horario:</p>
 		</div>
 		
 		<div class="section selHorario">
@@ -39,12 +40,11 @@
 		</div>
 		
 		<div class='section textoCorreo'>
-		<p>Introduce correo:</p>
+		<p>Introduzca su correo electrónico:</p>
 		</div>
 		
 		<div class='section inputCorreo'>
-		<h:inputText value="#{lineaBean.email}" requiredMessage="ERROR!ES necesario rellenar este campo" validatorMessage="ERROR!El valor introducido debe de ser un string"/>
-		
+			<h:inputText value="#{lineaBean.email}" requiredMessage="ERROR!ES necesario rellenar este campo" validatorMessage="ERROR!El valor introducido debe de ser un string"/>
 		</div>
 		
 		<div class='section botonReservarp3'>
@@ -55,10 +55,10 @@
 		<h:outputText value="#{lineaBean.anadirUsuario()}" rendered="#{lineaBean.verReserva}"/>
 		</div>
 		
-		<div class='section botonVolverp2'>
+		<!--<div class='section botonVolverp2'>
 		<h:commandButton action="#{lineaBean.cambiarPagina2()}" value="Volver" />
-		</div>
-
+		</div>-->
+		
 		
 	</h:form>
 	</div>

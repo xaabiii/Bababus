@@ -36,6 +36,10 @@
 .botonReserva,.botonVerMapa{
   	display: inline;
   }
+.botonReserva,.botonPara{
+  	display: inline;
+  }
+
 .botonVolverp2{
 	padding: 10%
 }  
@@ -140,6 +144,18 @@
   }
   .botonSele{
   	width: 70%;
+  	justify-content:right;
+  }
+  .botonPara{
+  	width: 70%;
+  	justify-content:right;
+  }
+  .botonReserva{
+  	width: 30%;
+  	justify-content:right;
+  }
+   .botonMapa{
+  	width: 30%;
   	justify-content:right;
   }
 
