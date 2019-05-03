@@ -23,7 +23,9 @@
 		</div>
 		
 		<div class="section inputAntelacion">
-		<h:inputText value="#{lineaBean.tiempoAviso}" />
+		<h:inputText value="#{lineaBean.tiempoAviso}" requiredMessage="ERROR!Es necesario que se rellene este campo" validatorMessage="ERROR!El campo rellenado debe de ser un número" >
+			<f:validateLongRange minimum="0" maximum="255"></f:validateLongRange>
+		</h:inputText>
 		
 		</div>
 		<div class='section textoSelHorario'>
@@ -41,7 +43,8 @@
 		</div>
 		
 		<div class='section inputCorreo'>
-		<h:inputText value="#{lineaBean.email}" />
+		<h:inputText value="#{lineaBean.email}" requiredMessage="ERROR!ES necesario rellenar este campo" validatorMessage="ERROR!El valor introducido debe de ser un string"/>
+		
 		</div>
 		
 		<div class='section botonReservarp3'>
