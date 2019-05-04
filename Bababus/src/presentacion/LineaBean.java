@@ -290,9 +290,7 @@ public class LineaBean implements Serializable{
 			return "El bababús se parará en " + negocio.buscarParadaNombre(entity2.getIdLineaParadas());
 			
 		}
-		
-		
-		
+
 		
 	}
 	

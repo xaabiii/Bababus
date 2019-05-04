@@ -33,12 +33,15 @@
   display: none;
 }
 
-.botonReserva,.botonVerMapa{
-  	display: inline;
+  
+.botonVerReserva,.botonVerMapa{
+  	width:15%;
+  	margin: 2%;
+  	
   }
-.botonReserva,.botonPara{
-  	display: inline;
-  }
+
+
+
 
 .botonVolverp2{
 	padding: 10%
@@ -59,10 +62,7 @@
   .textoAntelacion,.textoSelHorario,.textoCorreo{
   	font-size: 120%;
   }
-  .botonReserva,.botonVerMap{
-  	width:30%;
-  	margin: 15%;
-  }
+ 
 
   /*Tabla*/
   .divTablaHorario {
@@ -144,19 +144,19 @@
   }
   .botonSele{
   	width: 70%;
-  	justify-content:right;
+  	justify-content:left;
   }
   .botonPara{
   	width: 70%;
-  	justify-content:right;
+  	justify-content:left;
   }
   .botonReserva{
-  	width: 30%;
-  	justify-content:right;
+  	width: 70%;
+  	justify-content:left;
   }
    .botonMapa{
-  	width: 30%;
-  	justify-content:right;
+  	width: 70%;
+  	justify-content:left;
   }
 
   .inputAntelacion,.selHorario,.inputCorreo{
