@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+	  xmlns:h="http://java.sun.com/jsf/html">
+	  
+<h:head>
+	<title>BABABUS</title>
+	<h:outputStylesheet name="css/style.css"  />
+	<meta name='viewport'
+      content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
+</h:head> 
+
+<body> 
+	<div class='page'>
+	<h:form>
+		<div class='section titulo'>
+		<h1>Where is my Bus?</h1>
+		</div>
+		
+		<div class='section textoLinea'>
+		<p>Línea seleccionada: </p>
+		</div>
+		
+		<div class='section lineaSel'>		
+		<h:outputText value="#{lineaBean.entity.origenDestino}"/>
+		</div>
+		
+		<div class='section divTablaHorario'>
+		<input type='checkbox' id='botonTabla'/>
+		<label id='showBtn' for='botonTabla'>Ver horario</label>
+		<label id='hideBtn' for='botonTabla'>Ocultar horario</label>
+		<h:dataTable value="#{lineaBean.getListLineaHorario()}" var="hora" border="1" id="horario">
+			<h:column>
+				<f:facet name="header">HORARIO</f:facet>
+				<h:outputText value="#{hora.horario.hora}" />
+			</h:column>		
+		</h:dataTable>
+		</div>
+
+		<div class='section textoParada'>
+		<p>Seleccione parada: </p>
+		</div>
+		
+		<div class='section selectItemsParada'>
+		<h:selectOneMenu value="#{lineaBean.indice2}">
+			<f:selectItems value="#{lineaBean.items2}"></f:selectItems>
+		</h:selectOneMenu>
+		</div>
+		
+		<div class='section botonSele'>
+		<h:commandButton action="#{lineaBean.calcularTiempo()}" value="Ver tiempo de llegada" />
+		</div>
+		
+		<div class='section textoHorario'>
+		<h:outputText value="#{lineaBean.calcularTiempo()}" rendered="#{lineaBean.ver}"/>
+		</div>
+		
+		<div class='section botonPara'>
+		<h:commandButton action="#{lineaBean.solicitaParada()}" value="Solicitar parada" />
+		</div>
+		
+		<div class='section textoParada'>
+		<h:outputText value="#{lineaBean.solicitaParada()}" rendered="#{lineaBean.verParada}"/>
+		</div>
+		
+		<div class='section botonReserva'>
+		<h:commandButton action="#{lineaBean.cambiarPagina3()}" value="Reservar plaza" />
+		</div>
+		
+		<div class='section botonVerMapa'>
+		<h:commandButton action="#{lineaBean.verMapa()}" value="Ver Mapa" />
+		</div>
+		
+		<div class='section botonVolverp2'>
+		<h:commandButton action="#{lineaBean.cambiarPagina1()}" value="Volver" />
+		</div>
+		
+	</h:form>
+	</div>
+</body>  
+</html>
