@@ -276,7 +276,24 @@ public class LineaBean implements Serializable{
 		verParada=true;
 		
 		
-		return "El bababús se parará en " + negocio.buscarParadaNombre(entity2.getIdLineaParadas());
+		
+		String tiempo=negocio.calcularTiempo(entity.getIdLinea(),entity2.getIdLineaParadas());
+
+		
+		if(tiempo.equals("xxx")){
+			
+			return "No se puede solicitar la parada, el bababús ya ha pasado por "  + negocio.buscarParadaNombre(entity2.getIdLineaParadas());
+			
+		}
+		else{
+			negocio.solicitarParadaDB(entity2.getIdLineaParadas());
+			return "El bababús se parará en " + negocio.buscarParadaNombre(entity2.getIdLineaParadas());
+			
+		}
+		
+		
+		
+		
 	}
 	
 	
@@ -422,7 +439,7 @@ public class LineaBean implements Serializable{
 		
 		for (Usuario u : usuarios){
 			
-			if (u.getReserva().equals("true")){
+			if (u.getIncidencia().equals("true")){
 				
 				mensaje = "Posible retención, puede que el bababús se retrase";
 				

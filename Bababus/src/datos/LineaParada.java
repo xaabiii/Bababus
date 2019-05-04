@@ -21,7 +21,7 @@ public class LineaParada implements Serializable {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int idLineaParadas;
 
-	private String orden;
+	private String paradaSolicitada;
 
 	//uni-directional many-to-one association to Linea
 	@ManyToOne
@@ -44,12 +44,12 @@ public class LineaParada implements Serializable {
 		this.idLineaParadas = idLineaParadas;
 	}
 
-	public String getOrden() {
-		return this.orden;
+	public String getParadaSolicitada() {
+		return this.paradaSolicitada;
 	}
 
-	public void setOrden(String orden) {
-		this.orden = orden;
+	public void setParadaSolicitada(String paradaSolicitada) {
+		this.paradaSolicitada = paradaSolicitada;
 	}
 
 	public Linea getLinea() {

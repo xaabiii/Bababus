@@ -22,7 +22,7 @@ public class Usuario implements Serializable {
 
 	private String email;
 
-	private String reserva;
+	private String incidencia;
 
 	private String tiempoAviso;
 
@@ -60,12 +60,12 @@ public class Usuario implements Serializable {
 		this.email = email;
 	}
 
-	public String getReserva() {
-		return this.reserva;
+	public String getIncidencia() {
+		return this.incidencia;
 	}
 
-	public void setReserva(String reserva) {
-		this.reserva = reserva;
+	public void setIncidencia(String incidencia) {
+		this.incidencia = incidencia;
 	}
 
 	public String getTiempoAviso() {

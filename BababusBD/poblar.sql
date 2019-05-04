@@ -55,52 +55,52 @@ insert into Linea(origenDestino, Autobus_idAutobus) values ("Vitoria-Leioa", "3"
 insert into Linea(origenDestino, Autobus_idAutobus) values ("Leioa-Vitoria", "4");
 select * from Linea;
 
-insert into LineaParadas(Parada_idParada, Linea_idLinea) values("1","1");
-insert into LineaParadas(Parada_idParada, Linea_idLinea) values("2","1");
-insert into LineaParadas(Parada_idParada, Linea_idLinea) values("3","1");
-insert into LineaParadas(Parada_idParada, Linea_idLinea) values("4","1");
-insert into LineaParadas(Parada_idParada, Linea_idLinea) values("5","1");
-insert into LineaParadas(Parada_idParada, Linea_idLinea) values("6","1");
-insert into LineaParadas(Parada_idParada, Linea_idLinea) values("7","1");
-insert into LineaParadas(Parada_idParada, Linea_idLinea) values("8","1");
-insert into LineaParadas(Parada_idParada, Linea_idLinea) values("9","1");
+insert into LineaParadas(Parada_idParada, Linea_idLinea, paradaSolicitada) values("1","1", "false");
+insert into LineaParadas(Parada_idParada, Linea_idLinea, paradaSolicitada) values("2","1", "false");
+insert into LineaParadas(Parada_idParada, Linea_idLinea, paradaSolicitada) values("3","1", "false");
+insert into LineaParadas(Parada_idParada, Linea_idLinea, paradaSolicitada) values("4","1", "false");
+insert into LineaParadas(Parada_idParada, Linea_idLinea, paradaSolicitada) values("5","1", "false");
+insert into LineaParadas(Parada_idParada, Linea_idLinea, paradaSolicitada) values("6","1", "false");
+insert into LineaParadas(Parada_idParada, Linea_idLinea, paradaSolicitada) values("7","1", "false");
+insert into LineaParadas(Parada_idParada, Linea_idLinea, paradaSolicitada) values("8","1", "false");
+insert into LineaParadas(Parada_idParada, Linea_idLinea, paradaSolicitada) values("9","1", "false");
 
-insert into LineaParadas(Parada_idParada, Linea_idLinea) values("1","3");
-insert into LineaParadas(Parada_idParada, Linea_idLinea) values("2","3");
-insert into LineaParadas(Parada_idParada, Linea_idLinea) values("3","3");
-insert into LineaParadas(Parada_idParada, Linea_idLinea) values("4","3");
-insert into LineaParadas(Parada_idParada, Linea_idLinea) values("5","3");
-insert into LineaParadas(Parada_idParada, Linea_idLinea) values("6","3");
-insert into LineaParadas(Parada_idParada, Linea_idLinea) values("10","3");
+insert into LineaParadas(Parada_idParada, Linea_idLinea, paradaSolicitada) values("1","3", "false");
+insert into LineaParadas(Parada_idParada, Linea_idLinea, paradaSolicitada) values("2","3", "false");
+insert into LineaParadas(Parada_idParada, Linea_idLinea, paradaSolicitada) values("3","3", "false");
+insert into LineaParadas(Parada_idParada, Linea_idLinea, paradaSolicitada) values("4","3", "false");
+insert into LineaParadas(Parada_idParada, Linea_idLinea, paradaSolicitada) values("5","3", "false");
+insert into LineaParadas(Parada_idParada, Linea_idLinea, paradaSolicitada) values("6","3", "false");
+insert into LineaParadas(Parada_idParada, Linea_idLinea, paradaSolicitada) values("10","3", "false");
 
-insert into LineaParadas(Parada_idParada, Linea_idLinea) values("1","2");
-insert into LineaParadas(Parada_idParada, Linea_idLinea) values("2","2");
-insert into LineaParadas(Parada_idParada, Linea_idLinea) values("3","2");
-insert into LineaParadas(Parada_idParada, Linea_idLinea) values("4","2");
-insert into LineaParadas(Parada_idParada, Linea_idLinea) values("5","2");
-insert into LineaParadas(Parada_idParada, Linea_idLinea) values("6","2");
-insert into LineaParadas(Parada_idParada, Linea_idLinea) values("7","2");
-insert into LineaParadas(Parada_idParada, Linea_idLinea) values("8","2");
-insert into LineaParadas(Parada_idParada, Linea_idLinea) values("9","2");
+insert into LineaParadas(Parada_idParada, Linea_idLinea, paradaSolicitada) values("1","2", "false");
+insert into LineaParadas(Parada_idParada, Linea_idLinea, paradaSolicitada) values("2","2", "false");
+insert into LineaParadas(Parada_idParada, Linea_idLinea, paradaSolicitada) values("3","2", "false");
+insert into LineaParadas(Parada_idParada, Linea_idLinea, paradaSolicitada) values("4","2", "false");
+insert into LineaParadas(Parada_idParada, Linea_idLinea, paradaSolicitada) values("5","2", "false");
+insert into LineaParadas(Parada_idParada, Linea_idLinea, paradaSolicitada) values("6","2", "false");
+insert into LineaParadas(Parada_idParada, Linea_idLinea, paradaSolicitada) values("7","2", "false");
+insert into LineaParadas(Parada_idParada, Linea_idLinea, paradaSolicitada) values("8","2", "false");
+insert into LineaParadas(Parada_idParada, Linea_idLinea, paradaSolicitada) values("9","2", "false");
 
+insert into LineaParadas(Parada_idParada, Linea_idLinea, paradaSolicitada) values("1","4", "false");
+insert into LineaParadas(Parada_idParada, Linea_idLinea, paradaSolicitada) values("2","4", "false");
+insert into LineaParadas(Parada_idParada, Linea_idLinea, paradaSolicitada) values("3","4", "false");
+insert into LineaParadas(Parada_idParada, Linea_idLinea, paradaSolicitada) values("4","4", "false");
+insert into LineaParadas(Parada_idParada, Linea_idLinea, paradaSolicitada) values("5","4", "false");
+insert into LineaParadas(Parada_idParada, Linea_idLinea, paradaSolicitada) values("6","4", "false");
+insert into LineaParadas(Parada_idParada, Linea_idLinea, paradaSolicitada) values("10","4", "false");
 
-insert into LineaParadas(Parada_idParada, Linea_idLinea) values("1","4");
-insert into LineaParadas(Parada_idParada, Linea_idLinea) values("2","4");
-insert into LineaParadas(Parada_idParada, Linea_idLinea) values("3","4");
-insert into LineaParadas(Parada_idParada, Linea_idLinea) values("4","4");
-insert into LineaParadas(Parada_idParada, Linea_idLinea) values("5","4");
-insert into LineaParadas(Parada_idParada, Linea_idLinea) values("6","4");
-insert into LineaParadas(Parada_idParada, Linea_idLinea) values("10","4");
 select * from LineaParadas;
 
 
 
-insert into LineaHorarios(Horario_idHorario, Linea_idLinea) values("1","1");
-insert into LineaHorarios(Horario_idHorario, Linea_idLinea) values("2","1");
-insert into LineaHorarios(Horario_idHorario, Linea_idLinea) values("3","1");
-insert into LineaHorarios(Horario_idHorario, Linea_idLinea) values("5","1");
-insert into LineaHorarios(Horario_idHorario, Linea_idLinea) values("7","1");
-insert into LineaHorarios(Horario_idHorario, Linea_idLinea) values("9","1");
+insert into LineaHorarios(Horario_idHorario, Linea_idLinea) values("1","3");
+insert into LineaHorarios(Horario_idHorario, Linea_idLinea) values("2","3");
+insert into LineaHorarios(Horario_idHorario, Linea_idLinea) values("3","3");
+insert into LineaHorarios(Horario_idHorario, Linea_idLinea) values("5","3");
+insert into LineaHorarios(Horario_idHorario, Linea_idLinea) values("7","3");
+insert into LineaHorarios(Horario_idHorario, Linea_idLinea) values("9","3");
 
 insert into LineaHorarios(Horario_idHorario, Linea_idLinea) values("1","2");
 insert into LineaHorarios(Horario_idHorario, Linea_idLinea) values("2","2");
@@ -109,15 +109,15 @@ insert into LineaHorarios(Horario_idHorario, Linea_idLinea) values("5","2");
 insert into LineaHorarios(Horario_idHorario, Linea_idLinea) values("7","2");
 insert into LineaHorarios(Horario_idHorario, Linea_idLinea) values("9","2");
 
-insert into LineaHorarios(Horario_idHorario, Linea_idLinea) values("4","3");
-insert into LineaHorarios(Horario_idHorario, Linea_idLinea) values("6","3");
-insert into LineaHorarios(Horario_idHorario, Linea_idLinea) values("8","3");
-insert into LineaHorarios(Horario_idHorario, Linea_idLinea) values("10","3");
-insert into LineaHorarios(Horario_idHorario, Linea_idLinea) values("11","3");
-insert into LineaHorarios(Horario_idHorario, Linea_idLinea) values("12","3");
-insert into LineaHorarios(Horario_idHorario, Linea_idLinea) values("13","3");
-insert into LineaHorarios(Horario_idHorario, Linea_idLinea) values("14","3");
-insert into LineaHorarios(Horario_idHorario, Linea_idLinea) values("15","3");
+insert into LineaHorarios(Horario_idHorario, Linea_idLinea) values("4","1");
+insert into LineaHorarios(Horario_idHorario, Linea_idLinea) values("6","1");
+insert into LineaHorarios(Horario_idHorario, Linea_idLinea) values("8","1");
+insert into LineaHorarios(Horario_idHorario, Linea_idLinea) values("10","1");
+insert into LineaHorarios(Horario_idHorario, Linea_idLinea) values("11","1");
+insert into LineaHorarios(Horario_idHorario, Linea_idLinea) values("12","1");
+insert into LineaHorarios(Horario_idHorario, Linea_idLinea) values("13","1");
+insert into LineaHorarios(Horario_idHorario, Linea_idLinea) values("14","1");
+insert into LineaHorarios(Horario_idHorario, Linea_idLinea) values("15","1");
 
 
 

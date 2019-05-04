@@ -226,10 +226,10 @@ public class Servicios implements Serializable{
 		
 		Random rand = new Random();
 		if (rand.nextInt(100) < 5){
-			u.setReserva("true");
+			u.setIncidencia("true");
 		}
 		else{
-			u.setReserva("false");
+			u.setIncidencia("false");
 		}
 		
 		
@@ -243,11 +243,7 @@ public class Servicios implements Serializable{
 		a.setPlazas(a.getPlazas()-1);
 		em.persist(a);
 		
-		
-		
 
-		
-		
 	}
 	
 	@SuppressWarnings("unchecked")
@@ -275,6 +271,14 @@ public class Servicios implements Serializable{
 		
 		return usuarios;
 		
+	}
+	
+	public void solicitarParadaDB(int idLineaParada){
+		
+		LineaParada lp =new LineaParada();
+		lp=em.find(LineaParada.class, idLineaParada);
+		lp.setParadaSolicitada("true");
+		em.persist(lp);
 	}
 	
 	
