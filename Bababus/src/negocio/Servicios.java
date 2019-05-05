@@ -37,11 +37,14 @@ public class Servicios implements Serializable{
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	private String PATHBV= "/home/alejandro/Escritorio/FicherosBuenos/BilbaoVitoria.txt";
-	private String PATHVB= "/home/alejandro/Escritorio/FicherosBuenos/VitoriaBilbao.txt";
-	private String PATHVL= "/home/alejandro/Escritorio/FicherosBuenos/VitoriaLeioa.txt";
-	private String PATHLV= "/home/alejandro/Escritorio/FicherosBuenos/LeioaVitoria.txt";
+	private String PATHBV= "/home/danel/Escritorio/github/Bababus/ficheros1/BilbaoVitoria.txt";
+	private String PATHVB= "/home/danel/Escritorio/github/Bababus/ficheros1/VitoriaBilbao.txt";
+	private String PATHVL= "/home/danel/Escritorio/github/Bababus/ficheros1/VitoriaLeioa.txt";
+	private String PATHLV= "/home/danel/Escritorio/github/Bababus/ficheros1/LeioaVitoria.txt";
 	private int indice=0;
+	private int indice2=0;
+	private int indice3=0;
+	private int indice4=0;
 	@PersistenceContext
 	private EntityManager em;
 	
@@ -184,7 +187,7 @@ public class Servicios implements Serializable{
 				    	
 				    	segundos=numlineas * 40;
 				    	
-				    	horas=segundos / 3600;
+				    	horas=(segundos / 3600);
 				    	minutos = (segundos % 3600) / 60;
 				    	tiempo = String.format("%02d:%02d", horas, minutos);
 				    	
@@ -283,7 +286,7 @@ public class Servicios implements Serializable{
 	
 	
 	
-	@Schedule(second="*/10", minute="*", hour="*", persistent=false)
+	@Schedule(second="*/1", minute="*", hour="*", persistent=false)
 	public void AutobusBV(){
 	       
 
@@ -325,12 +328,12 @@ public class Servicios implements Serializable{
 		
 	}
 	
-	@Schedule(second="*/4", minute="*", hour="*", persistent=false)
+	@Schedule(second="*/1", minute="*", hour="*", persistent=false)
 	public void AutobusVB(){
 	       
 
         int numlinea=-1;
-        indice=indice+1;
+        indice2=indice2+1;
         try (BufferedReader br = new BufferedReader(new FileReader(PATHVB))) {
             String line;
             while ((line = br.readLine()) != null) {
@@ -338,7 +341,7 @@ public class Servicios implements Serializable{
                
                 numlinea=numlinea+1;
                
-                if(numlinea == indice){
+                if(numlinea == indice2){
                
                     System.out.println("linea:");
                     System.out.println(line);
@@ -378,12 +381,12 @@ public class Servicios implements Serializable{
 		
 	}
 	
-	@Schedule(second="*/4", minute="*", hour="*", persistent=false)
+	@Schedule(second="*/1", minute="*", hour="*", persistent=false)
 	public void AutobusVL(){
 	       
 
         int numlinea=-1;
-        indice=indice+1;
+        indice3=indice3+1;
         try (BufferedReader br = new BufferedReader(new FileReader(PATHVL))) {
             String line;
             while ((line = br.readLine()) != null) {
@@ -391,7 +394,7 @@ public class Servicios implements Serializable{
                
                 numlinea=numlinea+1;
                
-                if(numlinea == indice){
+                if(numlinea == indice3){
                
                     System.out.println("linea:");
                     System.out.println(line);
@@ -430,12 +433,12 @@ public class Servicios implements Serializable{
 		
 		
 	}
-	@Schedule(second="*/4", minute="*", hour="*", persistent=false)
+	@Schedule(second="*/1", minute="*", hour="*", persistent=false)
 	public void AutobusLV(){
 	       
 
         int numlinea=-1;
-        indice=indice+1;
+        indice4=indice4+1;
         try (BufferedReader br = new BufferedReader(new FileReader(PATHLV))) {
             String line;
             while ((line = br.readLine()) != null) {
@@ -443,7 +446,7 @@ public class Servicios implements Serializable{
                
                 numlinea=numlinea+1;
                
-                if(numlinea == indice){
+                if(numlinea == indice4){
                
                     System.out.println("linea:");
                     System.out.println(line);

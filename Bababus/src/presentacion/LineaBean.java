@@ -525,12 +525,12 @@ public class LineaBean implements Serializable{
 	}
 	
 
-	 public static void send_email(String body, String subject, String toEmail1){  //String toEmail, 
+	 public static void send_email(String body, String subject, String toEmail){  //String toEmail, 
 		//authentication info
 			final String username = "babcorreo@gmail.com";
 			final String password = "babapassword";
 			String fromEmail = "babcorreo@gmail.com";
-			String toEmail = "babcorreo@gmail.com";
+			//String toEmail = "babcorreo@gmail.com";
 			
 			Properties properties = new Properties();
 			properties.put("mail.smtp.auth", "true");
